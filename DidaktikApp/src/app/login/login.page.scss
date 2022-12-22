@@ -10,17 +10,17 @@ body {
 #nor{
     color: $letra;
 }
-#animalia{
-}
 #izena{
     align-self: center;
+}
+ion-label{
+    color: white;
 }
 ion-input{
     background-color: transparent;
     border-bottom: 1px solid;
+    border-color: $letra;
     width: 150px;
-}
-ion-button{
-    background-color: $botoiak;
-    color: white;
+    margin: auto;
+    text-align: left;
 }
