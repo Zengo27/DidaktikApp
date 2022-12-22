@@ -64,15 +64,6 @@ export class MapaPage implements OnInit {
       initialBreakpoint: 0.5
     });
     await modal.present();
-
-
-    /*let toast = await this.toastCtrl.create({
-      message: izena,
-      duration: 1000,
-      position: 'bottom',
-    });
-
-    toast.present();*/
   }
 
   async presentAlert() {
