@@ -1,9 +1,40 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>mapa</ion-title>
+    <ion-title>Mapa</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content scroll="false">
+  <div id="map" style="height: 100%"></div>
+  <ion-button
+    slot="fixed"
+    id="click-trigger"
+    style="position: absolute; right: 0px"
+    >LEKUAK</ion-button
+  >
+  <ion-popover trigger="click-trigger" triggerAction="click">
+    <ng-template>
+      <ion-content class="ion-padding">Igeldo mendia</ion-content>
+      <ion-content class="ion-padding">Haizearen orrazia</ion-content>
+      <ion-content class="ion-padding">Artzain Onaren Katedrala</ion-content>
+      <ion-content class="ion-padding">Danborrada</ion-content>
+      <ion-content class="ion-padding">Abuztuak 31</ion-content>
+      <ion-content class="ion-padding">San Telmo Museoa</ion-content>
+    </ng-template>
+  </ion-popover>
 
+  <ion-button slot="fixed" (click)="presentAlert()">
+    <ion-icon name="help-circle"></ion-icon>
+  </ion-button>
+
+  <ion-modal id="modal" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]" handleBehavior="cycle">
+    <ng-template>
+      <ion-content class="ion-padding">
+        <div class="ion-margin-top">
+          <ion-label>Click the handle above to advance to the next breakpoint.</ion-label>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>
+<!--Inline modal / Sheet Modal(Handle Behavior)-->
