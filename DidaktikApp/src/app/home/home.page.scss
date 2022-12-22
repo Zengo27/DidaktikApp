@@ -9,14 +9,10 @@ $fondoa: url("../../assets/images/concha.png");
 }
 
 #container strong {
-  font-size: 26px;
-  color: white;
+  font-size: 36px;
+  text-shadow: 2px 2px $letra;
 }
 
 #botoia {
   margin-top: 75%;
-}
-ion-button {
-  background-color: $botoiak;
-  
 }
