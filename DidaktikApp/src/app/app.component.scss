@@ -1,4 +1,7 @@
 $letra: #FF6600;
-$botoiak: #FF6600;
 $goiburuletra:  #FFFFFF;
-$fondoa: "../assets/images";
+$letra_familia:Andika;
+
+*{
+    font-family: $letra_familia;
+}
