@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-modal',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalPage implements OnInit {
 
+  title:string;
   constructor() { }
 
   ngOnInit() {
+    console.log(this.title);
   }
 
 }
