@@ -1,4 +1,26 @@
 @import "../app.component";
-.container{
-    background: url(#{$fondoa}/concha.png) no-repeat;
+$fondoa: "../../assets/images/concha.png";
+body {
+    background: url($fondoa) no-repeat;
+}
+#container{
+    text-align: center;
+    margin-top: 50%;
+}
+#nor{
+    color: $letra;
+}
+#animalia{
+}
+#izena{
+    align-self: center;
+}
+ion-input{
+    background-color: transparent;
+    border-bottom: 1px solid;
+    width: 150px;
+}
+ion-button{
+    background-color: $botoiak;
+    color: white;
 }
