@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {  AlertController, ToastController } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AlertController, ToastController, ModalController, IonModal } from '@ionic/angular';
 import * as L from "leaflet";
+import { ModalPage } from '../modal/modal.page';
 
 @Component({
   selector: 'app-mapa',
@@ -14,7 +15,7 @@ export class MapaPage implements OnInit {
   lng: number = -2.009;
   zoom: number = 12;
 
-  constructor(private toastCtrl: ToastController, private alertCtrl: AlertController) { }
+  constructor(private toastCtrl: ToastController, private alertCtrl: AlertController, private modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.mapaKargatu();
@@ -45,22 +46,30 @@ export class MapaPage implements OnInit {
       iconSize: [30, 40]
     });
 
-    let igeldo = L.marker([43.30964, -2.03707], { icon: icon }).on('click', (izena)=>{this.lekuaInfo("Igeldo")}, this).addTo(this.leafletMap)
-    let haize_orrazia = L.marker([43.32169, -2.00555], { icon: icon }).on('click', (izena)=>{this.lekuaInfo("Haize Orrazia")}, this).addTo(this.leafletMap)
-    let katedrala = L.marker([43.31668, -1.98154], { icon: icon }).on('click', (izena)=>{this.lekuaInfo("Artzain Onaren Katedrala")}, this).addTo(this.leafletMap)
-    let danborrada = L.marker([43.192504, -1.590549], { icon: icon }).on('click', (izena)=>{this.lekuaInfo("Danborrada")}, this).addTo(this.leafletMap)
-    let abuztuak31 = L.marker([43.32407, -1.98574], { icon: icon }).on('click', (izena)=>{this.lekuaInfo("Abuztuak 31 kalea")}, this).addTo(this.leafletMap)
-    let santelmo = L.marker([43.32504, -1.98504], { icon: icon }).on('click', (izena)=>{this.lekuaInfo("San Telmo Museoa")}, this).addTo(this.leafletMap)
+    let igeldo = L.marker([43.30964, -2.03707], { icon: icon }).on('click', (izena) => { this.lekuaInfo("Igeldo") }, this).addTo(this.leafletMap);
+    let haize_orrazia = L.marker([43.32169, -2.00555], { icon: icon }).on('click', (izena) => { this.lekuaInfo("Haize Orrazia") }, this).addTo(this.leafletMap)
+    let katedrala = L.marker([43.31668, -1.98154], { icon: icon }).on('click', (izena) => { this.lekuaInfo("Artzain Onaren Katedrala") }, this).addTo(this.leafletMap)
+    let danborrada = L.marker([43.192504, -1.590549], { icon: icon }).on('click', (izena) => { this.lekuaInfo("Danborrada") }, this).addTo(this.leafletMap)
+    let abuztuak31 = L.marker([43.32407, -1.98574], { icon: icon }).on('click', (izena) => { this.lekuaInfo("Abuztuak 31 kalea") }, this).addTo(this.leafletMap)
+    let santelmo = L.marker([43.32504, -1.98504], { icon: icon }).on('click', (izena) => { this.lekuaInfo("San Telmo Museoa") }, this).addTo(this.leafletMap)
   }
-  
-   async lekuaInfo(izena) {
-    let toast = await this.toastCtrl.create({
+
+  async lekuaInfo(izena) {
+    const modal = await this.modalCtrl.create({
+      component: ModalPage,
+      breakpoints: [0, 0.3, 0.5, 0.8],
+      initialBreakpoint: 0.5
+    });
+    await modal.present();
+
+
+    /*let toast = await this.toastCtrl.create({
       message: izena,
       duration: 1000,
       position: 'bottom',
     });
 
-    toast.present();
+    toast.present();*/
   }
 
   async presentAlert() {
