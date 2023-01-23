@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{lekua == 1 ? 'Igeldo mendia' : (lekua == 2 ? 'Haizearen Orrazia' : (lekua == 3 ? 'Artzain Onaren Katedrala' : (lekua == 4 ? 'Danborrada' : (lekua == 5 ? 'Abuztuak 31 kalea' : (lekua == 6 ? 'San Telmo Museoa' : 'fef')))))}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <body>
+    <ion-button *ngIf="lekua == 1" [routerLink]="['bikoteak']">Jarraitu 
+      <ion-icon name="arrow-forward"  end></ion-icon>
+    </ion-button>
+  </body>
+</ion-content>

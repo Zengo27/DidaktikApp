@@ -1,19 +1,22 @@
 @import "../app.component";
-$fondoa: url("../../assets/images/concha.png");
-#body {
-  background-image: $fondoa;
+$fondoa: "../../assets/images/concha.png";
+
+body {
+  background: url($fondoa);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
 #container {
-  text-align: center;
-  margin-top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 #container strong {
   font-size: 36px;
   color: $goiburuletra;
   text-shadow: 2px 2px $letra;
-}
-
-#botoia {
-  margin-top: 75%;
 }

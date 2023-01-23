@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { InformazioaPageRoutingModule } from './informazioa-routing.module';
+import { BikoteakPageRoutingModule } from './bikoteak-routing.module';
 
-import { InformazioaPage } from './informazioa.page';
+import { BikoteakPage } from './bikoteak.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InformazioaPageRoutingModule
+    BikoteakPageRoutingModule
   ],
-  declarations: [InformazioaPage]
+  declarations: [BikoteakPage]
 })
-export class InformazioaPageModule {}
+export class BikoteakPageModule {}

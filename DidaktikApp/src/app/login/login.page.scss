@@ -1,31 +1,46 @@
 @import "../app.component";
 $fondoa: "../../assets/images/concha.png";
 $zen: 1;
+
 body {
-    background: url($fondoa) no-repeat;
+    background: url($fondoa);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-#container{
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     text-align: center;
-    margin-top: 50%;
+    margin-top: -20%;
 }
-#nor{
+
+#nor {
     color: $letra;
 }
-#izena{
+
+#izena {
     align-self: center;
 }
-@while $zen <= 5{
-    img:nth-child(#{$zen}){
+
+@while $zen <=5 {
+    img:nth-child(#{$zen}) {
         width: 50px;
         height: 50px;
         margin: 5px;
     }
-    $zen : $zen + 1;
+
+    $zen : $zen +1;
 }
-ion-label{
+
+ion-label {
     color: white;
 }
-ion-input{
+
+ion-input {
     background-color: transparent;
     border-bottom: 1px solid;
     border-color: $letra;

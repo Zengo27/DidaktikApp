@@ -22,10 +22,12 @@ const routes: Routes = [
   {
     path: 'modal',
     loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
-  },  {
-    path: 'informazioa',
-    loadChildren: () => import('./informazioa/informazioa.module').then( m => m.InformazioaPageModule)
   },
+  {
+    path: 'leku-informazioa/:lekua',
+    loadChildren: () => import('./leku-informazioa/leku-informazioa.module').then( m => m.LekuInformazioaPageModule)
+  },
+
 
 ];
 
