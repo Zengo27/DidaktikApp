@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertController, NavController } from '@ionic/angular';
+import { AlertController, NavController, ViewWillEnter } from '@ionic/angular';
 import { delay } from 'rxjs';
 import { BukatuPage } from '../bukatu/bukatu.page';
 
@@ -9,7 +9,7 @@ import { BukatuPage } from '../bukatu/bukatu.page';
   templateUrl: './bikoteak.page.html',
   styleUrls: ['./bikoteak.page.scss'],
 })
-export class BikoteakPage implements OnInit {
+export class BikoteakPage implements ViewWillEnter {
 
   constructor(private navCtrl:NavController,private alertCtrl: AlertController,private router: Router) { }
 
@@ -17,7 +17,7 @@ export class BikoteakPage implements OnInit {
   declare front: NodeListOf<HTMLElement>;
   declare attempts: number;
 
-  ngOnInit(): void {
+  ionViewWillEnter(): void {
     this.card = document.querySelectorAll<HTMLElement>('.cell');
     this.front = document.querySelectorAll<HTMLElement>('.front');
     this.attempts = 0;
@@ -30,6 +30,10 @@ export class BikoteakPage implements OnInit {
       const num = [...Array(this.card.length).keys()]
       const random = Math.floor(Math.random() * this.card.length)
       c.style.order = num[random] + "";
+    })
+
+    this.front.forEach(c=>{
+      c.classList.remove("matched")
     })
   }
 
