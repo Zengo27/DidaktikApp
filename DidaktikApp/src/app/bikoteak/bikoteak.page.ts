@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertController, NavController, ViewWillEnter } from '@ionic/angular';
-import { delay } from 'rxjs';
-import { BukatuPage } from '../bukatu/bukatu.page';
 
 @Component({
   selector: 'app-bikoteak',
