@@ -14,10 +14,11 @@ body {
 #izena{
     align-self: center;
 }
-@while $zen < 5{
+@while $zen <= 5{
     img:nth-child(#{$zen}){
         width: 50px;
         height: 50px;
+        margin: 5px;
     }
     $zen : $zen + 1;
 }
