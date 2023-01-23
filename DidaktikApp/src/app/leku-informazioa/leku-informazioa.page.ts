@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-leku-informazioa',
@@ -8,11 +9,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class LekuInformazioaPage implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,private modalCtrl: ModalController) { }
 
   lekua:number;
   ngOnInit() {
     this.lekua= Number(this.route.snapshot.paramMap.get('lekua'));
+    this.modalCtrl.dismiss();
   }
 
 }

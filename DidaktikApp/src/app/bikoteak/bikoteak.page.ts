@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AlertController, NavController } from '@ionic/angular';
 import { delay } from 'rxjs';
 import { BukatuPage } from '../bukatu/bukatu.page';
 
@@ -10,14 +11,16 @@ import { BukatuPage } from '../bukatu/bukatu.page';
 })
 export class BikoteakPage implements OnInit {
 
-  constructor(private navCtrl:NavController) { }
+  constructor(private navCtrl:NavController,private alertCtrl: AlertController,private router: Router) { }
 
-  declare card: NodeListOf<HTMLElement>
-  declare front: NodeListOf<HTMLElement>
+  declare card: NodeListOf<HTMLElement>;
+  declare front: NodeListOf<HTMLElement>;
+  declare attempts: number;
 
   ngOnInit(): void {
     this.card = document.querySelectorAll<HTMLElement>('.cell');
     this.front = document.querySelectorAll<HTMLElement>('.front');
+    this.attempts = 0;
     this.suffleImage();
     this.clicking();
   }
@@ -43,26 +46,62 @@ export class BikoteakPage implements OnInit {
     }
   }
 
-  async match(card1: HTMLElement, card2: HTMLElement) {
+  async match(flipped1: HTMLElement, flipped2: HTMLElement) {
 
-    if (card1.dataset['index'] == card2.dataset['index']) {
-      card1.classList.remove('flip');
-      card2.classList.remove('flip');
-
-      card1.classList.add('matched');
-      card2.classList.add('matched');
-
-      const matched = document.querySelectorAll<HTMLElement>('.matched');
-      if(matched.length==10){
-        this.navCtrl.navigateForward("/bukatu");
-      }
-
+    if (flipped1.dataset['index'] == flipped2.dataset['index']) {
+      this.cardsAreTheSame(flipped1, flipped2);
     } else {
+      this.cardsNotTheSame(flipped1, flipped2);
+    }
+  }
+
+
+  cardsAreTheSame(card1: HTMLElement, card2: HTMLElement) {
+    card1.classList.remove('flip');
+    card2.classList.remove('flip');
+
+    card1.classList.add('matched');
+    card2.classList.add('matched');
+
+    const matched = document.querySelectorAll<HTMLElement>('.matched');
+    if(matched.length==10){
+      this.router.navigateByUrl('/bukatu');
+    }
+  }
+
+  cardsNotTheSame(card1: HTMLElement, card2: HTMLElement) {
+    this.attempts++;
+
+    if (this.attempts < 5) {
       setTimeout(() => {
         card1.classList.remove('flip');
         card2.classList.remove('flip');
       }, 500);
+    } else {
+      this.alert('Saiakera guztiak agortu dituzu');
     }
   }
 
+
+  async alert(testua:string) {
+    const alert = await this.alertCtrl.create({
+      subHeader: testua,
+      backdropDismiss: false,
+      buttons: [
+        {
+          text: 'Saiatu berriro',
+          handler: () => {
+              window.location.reload();
+          },
+        },
+        {
+          text: 'Atzera joan',
+          handler: () => {
+              this.router.navigateByUrl("/mapa")
+          },
+        },
+      ],
+    });
+    await alert.present();
+  }
 }

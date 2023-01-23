@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { AlertController, ToastController, ModalController, IonModal } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { AlertController, ModalController } from '@ionic/angular';
 import * as L from "leaflet";
 import { ModalPage } from '../modal/modal.page';
 
@@ -15,7 +15,7 @@ export class MapaPage implements OnInit {
   lng: number = -2.009;
   zoom: number = 12;
 
-  constructor(private toastCtrl: ToastController, private alertCtrl: AlertController, private modalCtrl: ModalController) { }
+  constructor(private alertCtrl: AlertController, private modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.mapaKargatu();
