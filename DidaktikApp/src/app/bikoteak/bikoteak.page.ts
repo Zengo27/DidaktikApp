@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { delay } from 'rxjs';
+import { BukatuPage } from '../bukatu/bukatu.page';
 
 @Component({
   selector: 'app-bikoteak',
@@ -8,7 +10,7 @@ import { delay } from 'rxjs';
 })
 export class BikoteakPage implements OnInit {
 
-  constructor() { }
+  constructor(private navCtrl:NavController) { }
 
   declare card: NodeListOf<HTMLElement>
   declare front: NodeListOf<HTMLElement>
@@ -50,11 +52,16 @@ export class BikoteakPage implements OnInit {
       card1.classList.add('matched');
       card2.classList.add('matched');
 
+      const matched = document.querySelectorAll<HTMLElement>('.matched');
+      if(matched.length==10){
+        this.navCtrl.navigateForward("/bukatu");
+      }
+
     } else {
       setTimeout(() => {
         card1.classList.remove('flip');
         card2.classList.remove('flip');
-      }, 1000);
+      }, 500);
     }
   }
 
