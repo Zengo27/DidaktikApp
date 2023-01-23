@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'leku-informazioa/:lekua',
     loadChildren: () => import('./leku-informazioa/leku-informazioa.module').then( m => m.LekuInformazioaPageModule)
+  },  {
+    path: 'bukatu',
+    loadChildren: () => import('./bukatu/bukatu.module').then( m => m.BukatuPageModule)
   },
+
 
 
 ];
