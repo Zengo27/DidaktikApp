@@ -1,0 +1,40 @@
+$fondoa: "../../assets/images/fondo.png";
+#container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    align-items: center;
+}
+body {
+    background: url($fondoa)  no-repeat;
+}
+ion-card{
+    text-align: left;
+    overflow-y: scroll;
+}
+#erantzunak{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    #erantzunak2{
+        ion-item{
+            display: flex;
+            flex-direction: column;
+            --ion-item-background: transparent;
+            background: none;
+            opacity: 1;
+        }
+        
+        ion-checkbox{
+            align-self: flex-end;
+        }
+        ion-label{
+            font-size: 14px;
+        }
+       }
+    
+}
+
+ion-button{
+    width: 75%;
+}

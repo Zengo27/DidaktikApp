@@ -1,0 +1,19 @@
+@import "../app.component";
+.content{
+    overflow: hidden;
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.fondoa{
+    background: url($fondoko_argazkia);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.75;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}

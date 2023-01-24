@@ -67,7 +67,7 @@ export class BikoteakPage implements ViewWillEnter {
 
     const matched = document.querySelectorAll<HTMLElement>('.matched');
     if(matched.length==10){
-      this.router.navigateByUrl('/bukatu');
+      this.router.navigate(['/bukatu']);
     }
   }
 
@@ -99,7 +99,7 @@ export class BikoteakPage implements ViewWillEnter {
         {
           text: 'Atzera joan',
           handler: () => {
-              this.router.navigateByUrl("/mapa")
+              this.router.navigate(["/mapa"]);
           },
         },
       ],

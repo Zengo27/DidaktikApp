@@ -86,6 +86,7 @@ export class LotzekoJokuaPage implements ViewWillEnter {
     if (this.asmatuta == 4) {
       this.alert('Denak asmatu dituzu!!');
       this.garbitu();
+      this.router.navigate(['/katedrala-jolasa']);
     }
   }
   garbitu() {

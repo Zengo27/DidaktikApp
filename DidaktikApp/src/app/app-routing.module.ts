@@ -30,9 +30,26 @@ const routes: Routes = [
   {
     path: 'bukatu',
     loadChildren: () => import('./bukatu/bukatu.module').then( m => m.BukatuPageModule)
-  },  {
+  },
+  {
     path: 'lotzeko-jokua',
     loadChildren: () => import('./lotzeko-jokua/lotzeko-jokua.module').then( m => m.LotzekoJokuaPageModule)
+  },
+  {
+    path: 'igeldo-argazkiak',
+    loadChildren: () => import('./igeldo-argazkiak/igeldo-argazkiak.module').then( m => m.IgeldoArgazkiakPageModule)
+  },
+  {
+    path: 'joku-informazioa',
+    loadChildren: () => import('./joku-informazioa/joku-informazioa.module').then( m => m.JokuInformazioaPageModule)
+  },
+  {
+    path: 'joku-informazioa:lekua',
+    loadChildren: () => import('./joku-informazioa/joku-informazioa.module').then( m => m.JokuInformazioaPageModule)
+  },
+  {
+    path: 'katedrala-jolasa',
+    loadChildren: () => import('./katedrala-jolasa/katedrala-jolasa.module').then( m => m.KatedralaJolasaPageModule)
   },
 
 ];
