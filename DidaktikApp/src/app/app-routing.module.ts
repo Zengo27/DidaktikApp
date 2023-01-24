@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: 'bukatu',
     loadChildren: () => import('./bukatu/bukatu.module').then( m => m.BukatuPageModule)
+  },  {
+    path: 'danborrada-argazkiak',
+    loadChildren: () => import('./danborrada-argazkiak/danborrada-argazkiak.module').then( m => m.DanborradaArgazkiakPageModule)
   },
+
 ];
 
 @NgModule({
