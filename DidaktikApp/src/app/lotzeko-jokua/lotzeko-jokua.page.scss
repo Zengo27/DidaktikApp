@@ -1,0 +1,16 @@
+@import "../app.component";
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+.irudiak {
+    display: flex;
+    flex-direction: column;
+}
+.izenak {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
