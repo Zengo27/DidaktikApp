@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-katedrala-jolasa',
@@ -17,13 +18,13 @@ export class KatedralaJolasaPage implements OnInit {
   getSelectedItem(selectedItem){
     if(selectedItem.value == this.egokia){
       console.log("Nice");
-      window.location.href="/mapa";
+      this.router.navigate(["/bukatu"]);
     }else{
       window.location.reload();
     }
     console.log(selectedItem.value);
   }
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
