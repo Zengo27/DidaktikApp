@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: 'bukatu',
     loadChildren: () => import('./bukatu/bukatu.module').then( m => m.BukatuPageModule)
+  },  {
+    path: 'lotzeko-jokua',
+    loadChildren: () => import('./lotzeko-jokua/lotzeko-jokua.module').then( m => m.LotzekoJokuaPageModule)
   },
+
 ];
 
 @NgModule({

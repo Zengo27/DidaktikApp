@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'bikoteak',
     loadChildren: () => import('../bikoteak/bikoteak.module').then( m => m.BikoteakPageModule)
   },
+  {
+    path: 'LotzekoJokua',
+    loadChildren: () => import('../lotzeko-jokua/lotzeko-jokua.module').then( m => m.LotzekoJokuaPageModule)
+  },
 ];
 
 @NgModule({
