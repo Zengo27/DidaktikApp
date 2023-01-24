@@ -1,8 +1,35 @@
 @import "../app.component";
+ion-title{
+    padding: 0px 20px;
+}
+.content{
+    overflow: hidden;
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
 
+.fondoa{
+    background: url($fondoko_argazkia);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.75;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
 .container {
+    position: relative;
     display: flex;
     flex-direction: row;
+    gap: 15rem;
+    justify-content: center;
+    background-color: rgb(165, 164, 164);
+    opacity: 75%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 .irudiak {
     display: flex;
@@ -11,6 +38,40 @@
 .izenak {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
+    justify-content: space-between;
+    width: 186.88px;
+}
+.aukera {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    height: 100px;
+}
+.zatia {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+}
+.botoia {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+h3 {
+    font-family: andika;
+    text-align: left;
+    text-align: center;
+    font-weight:bolder;
+    font-size: 50px;;
+}
+a {
+    font-family: andika;
+    font-size: 26px;
 }
