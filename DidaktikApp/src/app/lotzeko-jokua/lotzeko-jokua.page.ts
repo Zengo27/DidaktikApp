@@ -86,7 +86,6 @@ export class LotzekoJokuaPage implements ViewWillEnter {
     if (this.asmatuta == 4) {
       this.alert('Denak asmatu dituzu!!');
       this.garbitu();
-      this.router.navigate(['/katedrala-jolasa']);
     }
   }
   garbitu() {
@@ -128,6 +127,12 @@ export class LotzekoJokuaPage implements ViewWillEnter {
           text: 'Mapara bueltatu',
           handler: () => {
             this.router.navigateByUrl('/mapa');
+          },
+        },
+        {
+          text: 'Urrengo jolasa',
+          handler: () => {
+            this.router.navigateByUrl('//katedrala-jolasa');
           },
         },
       ],

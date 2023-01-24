@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./katedrala-jolasa.page.scss'],
 })
 export class KatedralaJolasaPage implements OnInit {
-  egokia = "Gargola"
+  egokia = "Petxina"
   list = [
     {value:"Petxina", isChecked: false},
     {value:"Gargola", isChecked: false},
