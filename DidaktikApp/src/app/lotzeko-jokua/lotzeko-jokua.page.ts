@@ -39,7 +39,7 @@ export class LotzekoJokuaPage implements ViewWillEnter {
         this.asmatuta = this.asmatuta + 1;
         this.bidaiatu();
       } else {
-        this.alert('Erantzun okerra');
+        this.alert('Erantzun okerra', false);
         this.garbitu();
       }
     }
@@ -84,7 +84,7 @@ export class LotzekoJokuaPage implements ViewWillEnter {
   }
   bidaiatu() {
     if (this.asmatuta == 4) {
-      this.alert('Denak asmatu dituzu!!');
+      this.alert('Denak asmatu dituzu!!', true);
       this.garbitu();
     }
   }
@@ -112,31 +112,42 @@ export class LotzekoJokuaPage implements ViewWillEnter {
 
   }
 
-  async alert(testua: string) {
-    const alert = await this.alertCtrl.create({
-      subHeader: testua,
-      backdropDismiss: false,
-      buttons: [
-        {
-          text: 'Saiatu berriro',
-          handler: () => {
-            this.router.navigateByUrl('/lotzeko-jokua');
+  async alert(testua: string, lortu:boolean) {
+    let alert=null;
+    if(lortu){
+      alert = await this.alertCtrl.create({
+        subHeader: testua,
+        backdropDismiss: false,
+        buttons: [
+          {
+            text: 'Hurrengo jolasa',
+            handler: () => {
+              this.router.navigateByUrl('/katedrala-jolasa');
+            },
           },
-        },
-        {
-          text: 'Mapara bueltatu',
-          handler: () => {
-            this.router.navigateByUrl('/mapa');
+        ],
+      });
+    }else{
+      alert = await this.alertCtrl.create({
+        subHeader: testua,
+        backdropDismiss: false,
+        buttons: [
+          {
+            text: 'Saiatu berriro',
+            handler: () => {
+              window.location.reload();
+            },
           },
-        },
-        {
-          text: 'Urrengo jolasa',
-          handler: () => {
-            this.router.navigateByUrl('//katedrala-jolasa');
+          {
+            text: 'Mapara bueltatu',
+            handler: () => {
+              this.router.navigate(['/mapa']);
+            },
           },
-        },
-      ],
-    });
+        ],
+      });
+    }
+    
     await alert.present();
   }
 }
