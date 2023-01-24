@@ -13,7 +13,7 @@ export class MapaPage implements ViewWillEnter {
   leafletMap: any;
   lat: number = 43.3152;
   lng: number = -2.009;
-  zoom: number = 12;
+  zoom: number = 13;
 
   listOfMarkers = [
     {
@@ -39,8 +39,8 @@ export class MapaPage implements ViewWillEnter {
     },
     {
       //Danborrada
-      lat: 43.192504,
-      lng: -1.590549,
+      lat: 43.32357,
+      lng: -1.98495,
       icon: "../../assets/icon/marker.png",
       izena: "Danborrada",
     },
