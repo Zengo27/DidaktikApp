@@ -53,7 +53,7 @@ export class LotzekoJokuaPage implements OnInit {
   }
   bidaiatu() {
     if (this.asmatuta == 4) {
-      this.router.navigateByUrl('/mapa');
+      this.router.navigate(['/katedrala-jolasa']);
     }
   }
 }

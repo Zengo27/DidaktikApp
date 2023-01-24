@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Katedrala-Jolasa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <body>
+    <div id="container">
+      <ion-card>
+        <ion-card-content>
+          Zein elementu ez da Artzain Onaren Katerdralean agertzen?
+        </ion-card-content>
+      </ion-card>
+      <div id="erantzunak">
+        <div id="erantzunak2">
+          <ion-item *ngFor="let item of list">
+            <ion-label>{{item.value}}</ion-label>
+            <ion-checkbox name="erantzuna1" [(ngModel)]="item.isChecked" (ionChange)="getSelectedItem(item)"></ion-checkbox>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+  </body>
+</ion-content>

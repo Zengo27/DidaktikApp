@@ -47,6 +47,10 @@ const routes: Routes = [
     path: 'joku-informazioa:lekua',
     loadChildren: () => import('./joku-informazioa/joku-informazioa.module').then( m => m.JokuInformazioaPageModule)
   },
+  {
+    path: 'katedrala-jolasa',
+    loadChildren: () => import('./katedrala-jolasa/katedrala-jolasa.module').then( m => m.KatedralaJolasaPageModule)
+  },
 
 ];
 
