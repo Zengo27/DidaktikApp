@@ -9,8 +9,8 @@ const routes: Routes = [
     component: LekuInformazioaPage
   },
   {
-    path: 'igeldo-argazkiak',
-    loadChildren: () => import('../igeldo-argazkiak/igeldo-argazkiak.module').then( m => m.IgeldoArgazkiakPageModule)
+    path: 'joku-informazioa',
+    loadChildren: () => import('../joku-informazioa/joku-informazioa.module').then( m => m.JokuInformazioaPageModule)
   },
   {
     path: 'lotzeko-jokua',
