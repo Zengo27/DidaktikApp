@@ -1,13 +1,25 @@
-$fondoa: "../../assets/images/fondo.png";
-#container{
+@import "../app.component";
+
+.content{
+    overflow: hidden;
+    position: relative; 
     display: flex;
     flex-direction: column;
-    margin-top: 10%;
-    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0px 20%;
 }
-body {
-    background: url($fondoa)  no-repeat;
+
+.fondoa{
+    background: url($fondoko_argazkia);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.75;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
+
 ion-card{
     text-align: left;
     overflow-y: scroll;
