@@ -32,13 +32,14 @@ const routes: Routes = [
     loadChildren: () => import('./bukatu/bukatu.module').then( m => m.BukatuPageModule)
   },
   {
-    path: 'danborrada-argazkiak',
-    loadChildren: () => import('./danborrada-argazkiak/danborrada-argazkiak.module').then( m => m.DanborradaArgazkiakPageModule)
-  },
-  {
     path: 'lotzeko-jokua',
     loadChildren: () => import('./lotzeko-jokua/lotzeko-jokua.module').then( m => m.LotzekoJokuaPageModule)
   },
+  {
+    path: 'igeldo-argazkiak',
+    loadChildren: () => import('./igeldo-argazkiak/igeldo-argazkiak.module').then( m => m.IgeldoArgazkiakPageModule)
+  },
+
 ];
 
 @NgModule({

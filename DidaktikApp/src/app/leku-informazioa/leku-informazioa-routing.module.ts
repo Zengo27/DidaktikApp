@@ -9,11 +9,11 @@ const routes: Routes = [
     component: LekuInformazioaPage
   },
   {
-    path: 'bikoteak',
-    loadChildren: () => import('../bikoteak/bikoteak.module').then( m => m.BikoteakPageModule)
+    path: 'igeldo-argazkiak',
+    loadChildren: () => import('../igeldo-argazkiak/igeldo-argazkiak.module').then( m => m.IgeldoArgazkiakPageModule)
   },
   {
-    path: 'LotzekoJokua',
+    path: 'lotzeko-jokua',
     loadChildren: () => import('../lotzeko-jokua/lotzeko-jokua.module').then( m => m.LotzekoJokuaPageModule)
   },
 ];
