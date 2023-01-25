@@ -51,6 +51,10 @@ const routes: Routes = [
     path: 'katedrala-jolasa',
     loadChildren: () => import('./katedrala-jolasa/katedrala-jolasa.module').then( m => m.KatedralaJolasaPageModule)
   },
+  {
+    path: 'danborrada-jolasa',
+    loadChildren: () => import('./danborrada-jolasa/danborrada-jolasa.module').then( m => m.DanborradaJolasaPageModule)
+  },
 
 ];
 

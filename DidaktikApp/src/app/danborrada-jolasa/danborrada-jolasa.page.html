@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>DanborradaJolasa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <div class="fondoa"></div>
+    <div class="container">
+      <div class="galdera">
+        <p id="galdera">Galdera:</p>
+      </div>
+      <div class="form">
+        <div class="answer">
+          <form action="/action_page.php" method="post">
+            <label for="fname">Zure erantzuna</label>
+            <input
+              type="text"
+              id="erantzuna"
+              value=""
+              placeholder="Zure erantzuna"
+            />
+          </form>
+        </div>
+        <div class="submit">
+          <input type="submit" value="Hurrengoa" (mousedown)="hurrengoa()"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
