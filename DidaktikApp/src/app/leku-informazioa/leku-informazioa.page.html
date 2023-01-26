@@ -11,6 +11,58 @@
   <div class="fondoa">
   </div>
   <div class="content">
+    <ion-card>
+      <img *ngIf="lekua == 1" alt="Igeldo mendia" src="../../assets/images/lekuen-argazkiak/igeldo.png" />
+
+      <img *ngIf="lekua == 2" alt="Haize Orrazia" src="../../assets/images/lekuen-argazkiak/haizeOrrazia.png" />
+      <ion-card-header>
+        <ion-card-title *ngIf="lekua == 1">Igeldo mendia</ion-card-title>
+        <ion-card-title *ngIf="lekua == 2">Haize Orrazia</ion-card-title>
+      </ion-card-header>
+
+      
+      <ion-card-content *ngIf="lekua == 1" >
+        <cdk-virtual-scroll-viewport itemSize="100">
+          <p>Igeldo mendia Donostian kokatuta dago, eta <b>181 metro</b>
+            neurtzen du. Bere izena dator Igeldo mendian ikus
+            daitezkeen hiru tontorrei esker. Gaur egun, mendi tontorrean
+            <b>Hotel bat</b> zein <b>Atrakzio Parkea</b> aurki ditzakegu, eta horra
+            heltzeko badago funikular bat igotzen gaituena. Funikular
+            hori Euskal Herriko zaharrena eta Espainiako hirugarren
+            zaharrena da. Gainera, <b>itsasargi</b> bat topatu dezakegu
+            nabigatzaileei kostaldea adierazteko eta gerta zitezkeen
+            gauza txarrak saihesten duena.</p>
+            <br>
+          <p>Mendi tontorrean atentzioak gehien deitzen duena atrakzio
+            parke bat egotea da, batez ere haurrei. Igeldo mendiko
+            jolas-parkea haur eta nagusientzako aisialdirako eta
+            dibertimendurako gunea da. Parkearen kokapena aldatu
+            egin da <b>atrakzio gehiago ekarri direlako</b>, batzuetan berriak
+            gehitu dira eta beste zenbaitetan zaharren ordez beste
+            batzuk jarri dira, eta gaur egun daudenen artean honako
+            hauek nabarmentzen dira: <b>ibai misteriotsua, beldurraren
+            pasabidea, labirintoa, auto txokeak, Igeldoko trenak,
+            txirrista</b>...</p>
+            
+        </cdk-virtual-scroll-viewport>
+      </ion-card-content>
+      <ion-card-content *ngIf="lekua == 2"> 
+        <cdk-virtual-scroll-viewport itemSize="100">
+          <p>Haizearen orrazia Donostian dagoen plaza eta eskultura
+            multzoa da, <b>Eduardo Txillidaren </b> <b>altzairuzko hiru eskulturek</b>
+            osatua,<b> 9 tonatik</b> gorako pisua du bakoitzak.</p>
+          <br>
+          <p><b>Ondarretako hondartzaren ipar-mendebaldeko muturrean</b>
+            dago. Oso <b>eskultura berezia</b> da bere formagatik, baina baita
+            ezkutatzen duen historiagatik ere. Obra hau leku honetan
+            kokatuta dago, <b>Chillidak txikitan itsasoaren eta olatuen
+            jantziez gozatzen zuelako</b> eta berarentzat esanahi handia
+            zuelako.</p>
+
+        </cdk-virtual-scroll-viewport>
+      </ion-card-content>
+    </ion-card>
+
     <ion-button *ngIf="lekua == 1" [routerLink]="['joku-informazioa']">Jarraitu 
       <ion-icon name="arrow-forward"  end></ion-icon>
     </ion-button>
