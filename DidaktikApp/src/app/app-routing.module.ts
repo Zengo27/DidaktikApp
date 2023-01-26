@@ -54,6 +54,10 @@ const routes: Routes = [
     path: 'puzzlea',
     loadChildren: () => import('./puzzlea/puzzlea.module').then( m => m.PuzzleaPageModule)
   },
+  {
+    path: 'danborrada-jolasa',
+    loadChildren: () => import('./danborrada-jolasa/danborrada-jolasa.module').then( m => m.DanborradaJolasaPageModule)
+  },
 
 
 ];

@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'lotzeko-jokua',
     loadChildren: () => import('../lotzeko-jokua/lotzeko-jokua.module').then( m => m.LotzekoJokuaPageModule)
   },
+  {
+    path: 'danborrada-jolasa',
+    loadChildren: () => import('../danborrada-jolasa/danborrada-jolasa.module').then( m => m.DanborradaJolasaPageModule)
+  },
 ];
 
 @NgModule({

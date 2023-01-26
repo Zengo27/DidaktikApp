@@ -1,0 +1,51 @@
+@import "../app.component";
+ion-title{
+    padding: 0px 20px;
+}
+.content{
+    overflow: hidden;
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.fondoa{
+    background: url($fondoko_argazkia);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.75;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.galdera {
+    display: flex;
+    flex-direction: column;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+}
+.answer {
+    display: flex;
+    flex-direction: row;
+}
+.submit {
+    display: flex;
+    flex-direction: column;
+}
+.botoi {
+    display: flex;
+    flex-direction: column;
+}
