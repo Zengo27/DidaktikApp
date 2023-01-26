@@ -50,7 +50,11 @@ const routes: Routes = [
   {
     path: 'katedrala-jolasa',
     loadChildren: () => import('./katedrala-jolasa/katedrala-jolasa.module').then( m => m.KatedralaJolasaPageModule)
+  },  {
+    path: 'puzzlea',
+    loadChildren: () => import('./puzzlea/puzzlea.module').then( m => m.PuzzleaPageModule)
   },
+
 
 ];
 

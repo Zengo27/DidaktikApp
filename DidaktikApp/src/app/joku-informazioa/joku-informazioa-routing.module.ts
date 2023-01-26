@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'igeldo-argazkiak',
     loadChildren: () => import('../igeldo-argazkiak/igeldo-argazkiak.module').then( m => m.IgeldoArgazkiakPageModule)
   },
+  {
+    path: 'puzzlea',
+    loadChildren: () => import('../puzzlea/puzzlea.module').then( m => m.PuzzleaPageModule)
+  },
 ];
 
 @NgModule({
