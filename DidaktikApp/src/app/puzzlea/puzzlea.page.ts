@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-puzzlea',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PuzzleaPage implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   piezas=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
   numClick=0;
@@ -77,7 +78,7 @@ export class PuzzleaPage implements OnInit {
         }
       }
       if(completo){
-        alert("Has completado el puzzle");
+          this.router.navigate(['/bukatu']);
       }
   }
 }

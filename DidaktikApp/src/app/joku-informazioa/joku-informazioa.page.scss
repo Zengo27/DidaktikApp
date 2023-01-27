@@ -17,3 +17,21 @@
     width: 100%;
     position: absolute;
 }
+ion-card{
+    text-align: center;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+cdk-virtual-scroll-viewport {
+    height:22vh;
+    border: 2px solid orange;
+    border-radius: 5px;
+}
+.brmedium {
+    display: block;
+    margin-bottom: 1.5em;
+}

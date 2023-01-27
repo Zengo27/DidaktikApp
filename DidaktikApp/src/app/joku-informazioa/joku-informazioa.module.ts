@@ -8,11 +8,14 @@ import { JokuInformazioaPageRoutingModule } from './joku-informazioa-routing.mod
 
 import { JokuInformazioaPage } from './joku-informazioa.page';
 
+import { ScrollingModule } from '@angular/cdk/scrolling';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    ScrollingModule,
     JokuInformazioaPageRoutingModule
   ],
   declarations: [JokuInformazioaPage]
