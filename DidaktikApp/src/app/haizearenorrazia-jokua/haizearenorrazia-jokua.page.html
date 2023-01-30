@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>orraziGalderak</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <body>
+    <div id="container" *ngFor="let item of list | slice:0:1">
+      <ion-card>
+        <ion-card-content>
+          {{item.galdera}}
+        </ion-card-content>
+      </ion-card>
+      <ion-item *ngFor="let item2 of item.erantzunak ; let i = index">
+          <ion-label [(ngModel)]="item.erantzunak[i]" ngDefaultControl>{{item.erantzunak[i]}}</ion-label>
+          <ion-checkbox id="checkId" name="erantzuna" (ionChange)="getSelectedItem(item.erantzunak[i])" onchange="check()"></ion-checkbox>
+      </ion-item>
+      <ion-button href="/jolasa"> &larr; Testura Joan</ion-button>
+    </div>
+  </body>
+</ion-content>
+<script>
+  function check() {
+    var input = document.getElementById('checkId');
+    if(input.checked == true){
+      input.checked = !input.checked;
+    }
+  }
+</script>
