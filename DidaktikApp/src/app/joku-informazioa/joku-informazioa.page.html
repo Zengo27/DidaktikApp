@@ -11,8 +11,42 @@
   <div class="fondoa">
   </div>
   <div class="content">
-    <ion-button *ngIf="lekua == 1" [routerLink]="['igeldo-argazkiak']">Jarraitu 
-      <ion-icon name="arrow-forward"  end></ion-icon>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title *ngIf="lekua == 1">Bikoteak</ion-card-title>
+        <ion-card-title *ngIf="lekua == 5">Hizki sopa</ion-card-title>
+        <ion-card-title *ngIf="lekua == 6">Puzzlea</ion-card-title>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <div  *ngIf="lekua == 1">
+          <p>Bikoteak buruz behera daude.</p>
+          <span class="brmedium"></span> 
+          <p>Lotu karta bakoitza bere bikotearekin.</p>
+          <span class="brmedium"></span> 
+          <p>Ondo memorizatu hurrengo argazkiak.</p>
+        </div>
+          
+        <p *ngIf="lekua == 5">Abuztuaren 31 oso data berezia da Donostiarrentzat. Egun
+          horretan, 1813an espainiarrekin aliatuta zeuden tropa
+          anglo-portugaldarrek <b>hiri osoa suntsitu eta erre</b> zutela
+          gogoratzen baita; hala ere, <b>kale bat salbatu</b> zen: abuztuaren
+          <b>31 kalea</b> izena jarri ziotena.</p>
+
+        <div  *ngIf="lekua == 6">
+          <p>Puzzlearen piezak nahastuta daude</p>
+          <span class="brmedium"></span> 
+          <p>Lehengo aukeratu zer pieza nahi duzun aldatzea eta gero posizioa</p>
+        </div>
+            
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button *ngIf="lekua == 1" [routerLink]="['igeldo-argazkiak']">Jolasten hasi 
+    </ion-button>
+
+    <ion-button *ngIf="lekua == 6" [routerLink]="['puzzlea']">Jolasten hasi 
     </ion-button>
     <ion-button *ngIf="lekua == 5" [routerLink]="['letra-sopa-info']">Jarraitu 
       <ion-icon name="arrow-forward"  end></ion-icon>

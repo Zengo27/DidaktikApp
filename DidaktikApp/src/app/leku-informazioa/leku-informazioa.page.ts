@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ModalController} from '@ionic/angular';
+import { InfiniteScrollCustomEvent, ModalController} from '@ionic/angular';
 
 @Component({
   selector: 'app-leku-informazioa',
@@ -17,5 +17,4 @@ export class LekuInformazioaPage implements OnInit {
     this.lekua= Number(this.route.snapshot.paramMap.get('lekua'));
     this.modalCtrl.dismiss();
   }
-
 }

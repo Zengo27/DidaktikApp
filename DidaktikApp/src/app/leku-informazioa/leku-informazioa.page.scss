@@ -17,3 +17,32 @@
     width: 100%;
     position: absolute;
 }
+
+p{
+    margin: 10px;
+}
+
+b{
+    color:$letra;
+}
+img{
+    width: 80%;
+    max-height: 25vh;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+ion-card{
+    text-align: center;
+    height: 60vh;
+}
+
+cdk-virtual-scroll-viewport {
+    height:22vh;
+    border: 2px solid orange;
+    border-radius: 5px;
+}
+
+.brmedium {
+    display: block;
+    margin-bottom: 1.5em;
+}

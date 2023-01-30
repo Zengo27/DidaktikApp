@@ -14,6 +14,11 @@ const routes: Routes = [
     path: 'letra-sopa-info',
     loadChildren: () => import('../letra-sopa-info/letra-sopa-info.module').then( m => m.LetraSopaInfoPageModule)
   }
+  ,
+  {
+    path: 'puzzlea',
+    loadChildren: () => import('../puzzlea/puzzlea.module').then( m => m.PuzzleaPageModule)
+  },
 ];
 
 @NgModule({

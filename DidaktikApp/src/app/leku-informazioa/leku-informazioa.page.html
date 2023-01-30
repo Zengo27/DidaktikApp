@@ -11,6 +11,172 @@
   <div class="fondoa">
   </div>
   <div class="content">
+    <ion-card>
+      <img *ngIf="lekua == 1" alt="Igeldo mendia" src="../../assets/images/lekuen-argazkiak/igeldo.png" />
+      <img *ngIf="lekua == 2" alt="Haize Orrazia" src="../../assets/images/lekuen-argazkiak/haizeOrrazia.png" />
+      <img *ngIf="lekua == 3" alt="Artzain Onaren Katedrala" src="../../assets/images/lekuen-argazkiak/artzainOnarenKatedrala.png" />
+      <img *ngIf="lekua == 4" alt="Danborrada" src="../../assets/images/lekuen-argazkiak/danborrada.png" />
+      <img *ngIf="lekua == 5" alt="Danborrada" src="../../assets/images/lekuen-argazkiak/abuztuak31.png" />
+      <img *ngIf="lekua == 6" alt="San Telmo" src="../../assets/images/lekuen-argazkiak/sanTelmo.png" />
+      <ion-card-header>
+        <ion-card-title *ngIf="lekua == 1">Igeldo mendia</ion-card-title>
+        <ion-card-title *ngIf="lekua == 2">Haize Orrazia</ion-card-title>
+        <ion-card-title *ngIf="lekua == 3">Artzain Onaren Katedrala</ion-card-title>
+        <ion-card-title *ngIf="lekua == 4">Danborrada</ion-card-title>
+        <ion-card-title *ngIf="lekua == 5">Abuztuak 31</ion-card-title>
+        <ion-card-title *ngIf="lekua == 6">San Telmo Museoa</ion-card-title>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <cdk-virtual-scroll-viewport itemSize="100" *ngIf="lekua == 1">
+          <p>Igeldo mendia Donostian kokatuta dago, eta <b>181 metro</b>
+            neurtzen du. Bere izena dator Igeldo mendian ikus
+            daitezkeen hiru tontorrei esker. </p>
+
+            <span class="brmedium"></span>
+
+          <p>Gaur egun, mendi tontorrean
+            <b>Hotel bat</b> zein <b>Atrakzio Parkea</b> aurki ditzakegu, eta horra
+            heltzeko badago funikular bat igotzen gaituena. Funikular
+            hori Euskal Herriko zaharrena eta Espainiako hirugarren
+            zaharrena da. Gainera, <b>itsasargi</b> bat topatu dezakegu
+            nabigatzaileei kostaldea adierazteko eta gerta zitezkeen
+            gauza txarrak saihesten duena.</p>
+
+            <span class="brmedium"></span> 
+
+          <p>Mendi tontorrean atentzioak gehien deitzen duena atrakzio
+            parke bat egotea da, batez ere haurrei. Igeldo mendiko
+            jolas-parkea haur eta nagusientzako aisialdirako eta
+            dibertimendurako gunea da. Parkearen kokapena aldatu
+            egin da <b>atrakzio gehiago ekarri direlako</b>, batzuetan berriak
+            gehitu dira eta beste zenbaitetan zaharren ordez beste
+            batzuk jarri dira, eta gaur egun daudenen artean honako
+            hauek nabarmentzen dira: <b>ibai misteriotsua, beldurraren
+            pasabidea, labirintoa, auto txokeak, Igeldoko trenak,
+            txirrista</b>...</p>
+        </cdk-virtual-scroll-viewport>
+      
+        <cdk-virtual-scroll-viewport itemSize="100" *ngIf="lekua == 2">
+          <p>Haizearen orrazia Donostian dagoen plaza eta eskultura
+            multzoa da, <b>Eduardo Txillidaren </b> <b>altzairuzko hiru eskulturek</b>
+            osatua,<b> 9 tonatik</b> gorako pisua du bakoitzak.</p>
+
+            <span class="brmedium"></span>
+
+          <p><b>Ondarretako hondartzaren ipar-mendebaldeko muturrean</b>
+            dago. Oso <b>eskultura berezia</b> da bere formagatik, baina baita
+            ezkutatzen duen historiagatik ere. Obra hau leku honetan
+            kokatuta dago, <b>Chillidak txikitan itsasoaren eta olatuen
+            jantziez gozatzen zuelako</b> eta berarentzat esanahi handia
+            zuelako.</p>
+        </cdk-virtual-scroll-viewport>
+
+        <cdk-virtual-scroll-viewport itemSize="100" *ngIf="lekua == 3">
+          <p>Donostiako eraikin erlijioso handiena da,
+            <b>1915 metro karratu</b> dituena eta Igeldo
+            mendiko arbel eta harriarekin eraiki zen.</p>
+
+          <span class="brmedium"></span>
+
+          <p>Alemania eta Frantziako Erdi Aroko elizetan
+            inspiratua dago eta <b>estilo neogotikoa</b> du.
+            Estilo neogotikoa mugimendu artistiko
+            historikoa izan zen, hau da, iraganeko
+            arkitektura berreskuratzen du hainbat
+            apaingarri gehituz eta 1740ko hamarkadaren 
+            amaieran hasi zen Erresuma Batuan.</p>
+          
+          <span class="brmedium"></span>
+
+          <p>Manuel Echave arkitekto gipuzkoarraren
+            obra neogotiko hau XIX. mendean eraiki
+            zen. Gero, 1897an inauguratu zen eta
+            1953. urtetik katedral maila du.
+            <b>Elementu apaingarri</b> asko ikus daitezke,
+            besteak beste, <b>beirateak, arbotanteak
+            gargolak eta pinakuluak</b>.</p>
+        </cdk-virtual-scroll-viewport>
+
+        <cdk-virtual-scroll-viewport itemSize="100" *ngIf="lekua == 4">
+          <p>Urtarrilaren 20an Euskal Herriko Gipuzkoako hiriburuan,
+            Donostian hain zuzen ere, Danborrada eguna ospatzen da.</p>
+
+            <span class="brmedium"></span> 
+
+          <p>Danborradaren festa danbor eta kupelen desfileek osatzen
+            dute eta kaleetatik desfilatzen dute hainbat abesti joz. Abesti
+            gehienak Raimundo Sarriegik konposatuak dira, XIX.
+            mendeko ekitaldirako sortu izan zituenak. Gainera jantzi
+            ezberdinak daramatzate. Danborra jotzen dutenek, jantzi
+            militar napoleonikoa daramate; eta zurezko kupelek ordea,
+            sukaldariz jantzita doaz.</p>
+
+            <span class="brmedium"></span> 
+
+          <p>1882an, Udalak San Telmo kuartelean gordetzen ziren
+            danbor zaharrak eta Napoleonen tropen jantziak erabili
+            zituzten danborrada ospatzeko. Beranduago, 1886an,
+            kupelak gehitu zitzaizkion konpartsari; hiriko bertako
+            biztanleak sinbolizatzen dituztenak.</p>
+
+            <span class="brmedium"></span> 
+
+          <p>Gaur egun, 147 danborradatan banatutako 18.000 partaide
+            baino gehiago ateratzen dira kaleetan egunak irauten duen
+            24 orduetan zehar; hiriko zaindariaren omenez.</p>
+        </cdk-virtual-scroll-viewport>
+
+        <cdk-virtual-scroll-viewport itemSize="100" *ngIf="lekua == 5">
+          <p>Abuztuaren 31 oso data berezia da Donostiarrentzat. Egun
+            horretan, 1813an espainiarrekin aliatuta zeuden tropa
+            anglo-portugaldarrek <b>hiri osoa suntsitu eta erre</b> zutela
+            gogoratzen baita; hala ere, <b>kale bat salbatu</b> zen: abuztuaren
+            <b>31 kalea</b> izena jarri ziotena.</p>
+
+            <span class="brmedium"></span> 
+
+          <p><b>Independentzia Gerran</b>, Napoleonen armadak Donostia hartu
+            zuen. Horren aurrean, Espainiako armada Wellingtongo
+            dukearen armadarekin elkartu zen, tropa frantsesak
+            kanporatzeko.</p>
+
+            <span class="brmedium"></span> 
+
+          <p>Baina aliatutako tropek, <b>ez zuten gure hiriaren alde egin</b>,
+            baizik eta etxeak arpilatu eta hiritar asko hil zituzten ia hiri
+            osoa erre arte.</p>
+            
+            <span class="brmedium"></span> 
+
+          <p><b>iztanleen erdiak bakarrik salbatu</b> ziren; hau da, <b>8.000 &#8208;
+            9.000 pertsona</b> inguru hain zuzen ere. Biztanle horiek hiria
+            zegoen bezala eta leku berean berreraikitzea erabaki zuten.</p>
+
+            <span class="brmedium"></span> 
+
+          <p><b>Abuztuaren 31n</b>, donostiarrek gertaera horiek gogoratzen
+            dituzte, <b>batailak, desfileak eta lore-eskaintzak eginez</b>.
+            Gainera, gauean, argi guztiak itzaltzen dira eta herritarrek
+            kandelak pizten dituzte kale horretan, hildako guztiak eta
+            sutea gogoratzeko.</p>
+        </cdk-virtual-scroll-viewport>
+
+        <cdk-virtual-scroll-viewport itemSize="100" *ngIf="lekua == 6">
+          <p>San Telmo Museoa, Gipuzkoan, bereziki Donostian kokatzen da eta udal museo bat da, Euskal Herriko gizartean garrantzitsua dena eta bertan, <b>Euskal Herriko historia</b> azaltzen da.</p>
+
+            <span class="brmedium"></span> 
+
+          <p>San Telmo museoa pixka bat <b>zahartuta zegoenez berriztea</b> erabaki zuten eta urte batzuk eraikitzen aritu ondoren, <b>2011an bukatu</b> zuten obra, museo berria bihurtu arte. Museoan, <b>euskal gizartearekin lotutako gaien inguruan</b> hitz egiten da eta historian gertatu diren gertaera interesagarri eta garrantzitsuenak kontatzen dituzte. Horrela antzinako historia jakinda, askoz ere hobeto ulertu ahal izango dugu oraina.</p>
+
+            <span class="brmedium"></span> 
+
+          <p>Eraikuntzari erreparatuz gero, ikusi dezakegu museoak <b>bi solairu</b> dituela. Alde batetik, <b>beheko solairuan</b> hainbat espazio desberdin ikus ditzakegu; <b>eliza</b>, <b>ekitaldi aretoa</b>, <b>dorrea</b>, <b>erakusketa-aretoak</b> eta <b>kafetegia</b> daude. Bestetik, <b>goiko solairuan</b>, <b>bulego-eremua</b>, <b>laborategi aretoa</b> eta <b>hezkuntza tailerra</b> daude. Museoan, aurkikuntza arkeologiko interesgarriak egin dira eta elizan pintura zaharren arrastoak agertu izan dira.</p>
+            
+        </cdk-virtual-scroll-viewport>
+      </ion-card-content>
+    </ion-card>
+
     <ion-button *ngIf="lekua == 1" [routerLink]="['joku-informazioa']">Jarraitu 
       <ion-icon name="arrow-forward"  end></ion-icon>
     </ion-button>

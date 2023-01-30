@@ -6,8 +6,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 100%;
-    padding: 0px 20%;
+    padding: 0px 15%;
 }
 
 .fondoa{
@@ -22,19 +23,25 @@
 
 ion-card{
     text-align: left;
-    overflow-y: scroll;
+    width: 100%;
+
+    p{
+        margin-bottom: 10px;
+        color: $letra;
+        font-weight: bold;
+    }
 }
 #erantzunak{
     display: flex;
     text-align: left;
     flex-direction: column;
+
     #erantzunak2{
         ion-item{
             display: flex;
             flex-direction: column;
             --ion-item-background: transparent;
             background: none;
-            opacity: 1;
         }
         
         ion-checkbox{
@@ -43,10 +50,5 @@ ion-card{
         ion-label{
             font-size: 14px;
         }
-       }
-    
-}
-
-ion-button{
-    width: 75%;
+    }
 }
