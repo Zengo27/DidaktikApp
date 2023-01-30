@@ -9,7 +9,6 @@ import { AlertController, NavController, ViewWillEnter } from '@ionic/angular';
 })
 export class DanborradaJolasaPage implements ViewWillEnter {
   constructor(
-    private navCtrl: NavController,
     private alertCtrl: AlertController,
     private router: Router
   ) {}
@@ -44,32 +43,50 @@ export class DanborradaJolasaPage implements ViewWillEnter {
           this.galderak[this.asmatuta];
         this.ans.value = ""
       } else {
-        this.alert('Erantzun okerra');
+        this.alert('Erantzun okerra',false);
       }
     }
     else {
-      this.alert('Denak asmatu dituzu!!');
+      this.alert('Denak asmatu dituzu!!',true);
     }
   }
-  async alert(testua: string) {
-    const alert = await this.alertCtrl.create({
-      subHeader: testua,
-      backdropDismiss: false,
-      buttons: [
-        {
-          text: 'Saiatu berriro',
-          handler: () => {
-            window.location.reload();
+
+  async alert(testua: string, lortu:boolean) {
+    let alert=null;
+    if(lortu){
+      alert = await this.alertCtrl.create({
+        subHeader: testua,
+        backdropDismiss: false,
+        buttons: [
+          {
+            text: 'Bukatu',
+            handler: () => {
+              this.router.navigate(['/bukatu']);
+            },
           },
-        },
-        {
-          text: 'Mapara bueltatu',
-          handler: () => {
-            this.router.navigateByUrl('/mapa');
+        ],
+      });
+    }else{
+      alert = await this.alertCtrl.create({
+        subHeader: testua,
+        backdropDismiss: false,
+        buttons: [
+          {
+            text: 'Mapara bueltatu',
+            handler: () => {
+              this.router.navigate(['/mapa']);
+            },
           },
-        },
-      ],
-    });
+          {
+            text: 'Saiatu berriro',
+            handler: () => {
+              window.location.reload();
+            },
+          },
+        ],
+      });
+    }
+    
     await alert.present();
   }
 }
