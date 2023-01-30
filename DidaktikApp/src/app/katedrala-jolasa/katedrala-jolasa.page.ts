@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-katedrala-jolasa',
@@ -9,24 +10,64 @@ import { Router } from '@angular/router';
 export class KatedralaJolasaPage implements OnInit {
   egokia = "Petxina"
   list = [
-    {value:"Petxina", isChecked: false},
     {value:"Gargola", isChecked: false},
     {value:"Pinakulua", isChecked: false},
+    {value:"Petxina", isChecked: false},
     {value:"Arbotantea", isChecked: false},
     {value:"Beiratea", isChecked: false}
   ]
+ 
+  constructor(private router: Router,private alertCtrl: AlertController,) { }
+
+  ngOnInit() {
+  }
+
   getSelectedItem(selectedItem){
     if(selectedItem.value == this.egokia){
       console.log("Nice");
       this.router.navigate(["/bukatu"]);
     }else{
-      window.location.reload();
+      this.alert('Erantzun okerra', false);
     }
     console.log(selectedItem.value);
   }
-  constructor(private router: Router) { }
 
-  ngOnInit() {
+  async alert(testua: string, lortu:boolean) {
+    let alert=null;
+    if(lortu){
+      alert = await this.alertCtrl.create({
+        subHeader: testua,
+        backdropDismiss: false,
+        buttons: [
+          {
+            text: 'Hurrengo jolasa',
+            handler: () => {
+              this.router.navigateByUrl('/bukatu');
+            },
+          },
+        ],
+      });
+    }else{
+      alert = await this.alertCtrl.create({
+        subHeader: testua,
+        backdropDismiss: false,
+        buttons: [
+          {
+            text: 'Mapara bueltatu',
+            handler: () => {
+              this.router.navigate(['/mapa']);
+            },
+          },
+          {
+            text: 'Saiatu berriro',
+            handler: () => {
+              window.location.reload();
+            },
+          },
+        ],
+      });
+    }
+    
+    await alert.present();
   }
-
 }

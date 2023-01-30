@@ -24,10 +24,6 @@ ion-title{
     display: grid;
     grid-template-columns: 1fr 1fr ;
     position: relative;
-    /*display: flex;
-    flex-direction: row;
-    gap: 15%;
-    justify-content: center;*/
 }
 ion-card{
     display: flex;
@@ -35,44 +31,13 @@ ion-card{
     align-items: center;
     justify-content: space-evenly;
     gap: 5%;
-    cursor: pointer;
-}
-/*.irudiak {
-    display: flex;
-    flex-direction: column;
-}
-.izenak {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    justify-content: space-between;
-    width: 186.88px;
-}
-.aukera {
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
-    height: 100px;
+
+    img{
+        cursor: pointer;
+    }
     
-    background-color: white;
-    padding: 10px;
-}
-.zatia {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-}
-.botoia {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}*/
-a {
-    font-size: 26px;
+    a {
+        font-size: 24px;
+        cursor: pointer;
+    }
 }

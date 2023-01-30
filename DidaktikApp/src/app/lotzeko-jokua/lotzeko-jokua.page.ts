@@ -10,7 +10,6 @@ import { clear } from 'console';
 })
 export class LotzekoJokuaPage implements ViewWillEnter {
   constructor(
-    private navCtrl: NavController,
     private alertCtrl: AlertController,
     private router: Router
   ) {}
@@ -138,7 +137,7 @@ export class LotzekoJokuaPage implements ViewWillEnter {
     element.style.color = 'black';
     element.checked=false;
     element.disabled=false;
-    
+
     this.lehenAukeratua = "";
     this.bigarrenAukeratua = "";
     this.asmatuta = 0;
@@ -168,15 +167,15 @@ export class LotzekoJokuaPage implements ViewWillEnter {
         backdropDismiss: false,
         buttons: [
           {
-            text: 'Saiatu berriro',
-            handler: () => {
-              window.location.reload();
-            },
-          },
-          {
             text: 'Mapara bueltatu',
             handler: () => {
               this.router.navigate(['/mapa']);
+            },
+          },
+          {
+            text: 'Saiatu berriro',
+            handler: () => {
+              window.location.reload();
             },
           },
         ],

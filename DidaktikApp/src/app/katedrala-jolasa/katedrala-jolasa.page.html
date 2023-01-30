@@ -10,16 +10,17 @@
     <div class="content">
       <ion-card>
         <ion-card-content>
-          Zein elementu ez da Artzain Onaren Katerdralean agertzen?
+          <p>Zein elementu ez da Artzain Onaren Katerdralean agertzen?</p>
+
+          <div id="erantzunak">
+            <div id="erantzunak2">
+              <ion-item *ngFor="let item of list">
+                <ion-label>{{item.value}}</ion-label>
+                <ion-checkbox name="erantzuna1" [(ngModel)]="item.isChecked" (ionChange)="getSelectedItem(item)"></ion-checkbox>
+              </ion-item>
+            </div>
+          </div>
         </ion-card-content>
       </ion-card>
-      <div id="erantzunak">
-        <div id="erantzunak2">
-          <ion-item *ngFor="let item of list">
-            <ion-label>{{item.value}}</ion-label>
-            <ion-checkbox name="erantzuna1" [(ngModel)]="item.isChecked" (ionChange)="getSelectedItem(item)"></ion-checkbox>
-          </ion-item>
-        </div>
-      </div>
     </div>
 </ion-content>
