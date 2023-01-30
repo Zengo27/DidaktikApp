@@ -24,14 +24,21 @@ ion-card{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        margin-top: 15px;
+
+        p{
+            font-weight: bold;
+            color: $letra;
+        }
+    }
+
+    .brmedium {
+        display: block;
+        margin-bottom: 1.5em;
+    }
 }
 
-cdk-virtual-scroll-viewport {
-    height:22vh;
-    border: 2px solid orange;
-    border-radius: 5px;
-}
-.brmedium {
-    display: block;
-    margin-bottom: 1.5em;
-}
