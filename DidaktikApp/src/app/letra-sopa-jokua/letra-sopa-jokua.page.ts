@@ -90,6 +90,7 @@ export class LetraSopaJokuaPage implements ViewWillEnter {
     for (var i = 0; i < this.hitzak.length; i++) {
       this.hitzakp = document.createElement('p');
       this.hitzakp.setAttribute('id', 'hitza' + i);
+      this.hitzakp.style.margin="2px";
       this.hitzakp.textContent = this.hitzak[i];
       this.hitzakdiv?.appendChild(this.hitzakp);
     }
