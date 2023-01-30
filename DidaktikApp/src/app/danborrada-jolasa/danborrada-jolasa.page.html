@@ -7,26 +7,17 @@
 <ion-content>
   <div class="content">
     <div class="fondoa"></div>
-    <div class="container">
-      <div class="galdera">
-        <p id="galdera">Galdera:</p>
-      </div>
-      <div class="form">
-        <div class="answer">
-          <form action="/action_page.php" method="post">
-            <label for="fname">Zure erantzuna</label>
-            <input
-              type="text"
-              id="erantzuna"
-              value=""
-              placeholder="Zure erantzuna"
-            />
+    <ion-card>
+      <p id="galdera">Galdera:</p>
+          <form method="post">
+            <ion-item>
+              <ion-label for="fname">Zure erantzuna</ion-label>
+              <ion-input type="text" id="erantzuna"></ion-input>
+            </ion-item>
           </form>
-        </div>
         <div class="submit">
-          <input type="submit" value="Hurrengoa" (mousedown)="hurrengoa()"/>
+          <ion-button type="submit" (mousedown)="hurrengoa()">Hurrengoa</ion-button>
         </div>
-      </div>
-    </div>
+    </ion-card>
   </div>
 </ion-content>
