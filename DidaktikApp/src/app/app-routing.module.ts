@@ -50,7 +50,8 @@ const routes: Routes = [
   {
     path: 'katedrala-jolasa',
     loadChildren: () => import('./katedrala-jolasa/katedrala-jolasa.module').then( m => m.KatedralaJolasaPageModule)
-  },  {
+  },
+  {
     path: 'puzzlea',
     loadChildren: () => import('./puzzlea/puzzlea.module').then( m => m.PuzzleaPageModule)
   },
@@ -58,7 +59,10 @@ const routes: Routes = [
     path: 'danborrada-jolasa',
     loadChildren: () => import('./danborrada-jolasa/danborrada-jolasa.module').then( m => m.DanborradaJolasaPageModule)
   },
-
+  {
+    path: 'haizearenorrazia-jokua',
+    loadChildren: () => import('./haizearenorrazia-jokua/haizearenorrazia-jokua.module').then( m => m.HaizearenorraziaJokuaPageModule)
+  },
 
 ];
 
