@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'danborrada-jolasa',
     loadChildren: () => import('../danborrada-jolasa/danborrada-jolasa.module').then( m => m.DanborradaJolasaPageModule)
   },
+  {
+    path: 'haizearenorrazia-jokua',
+    loadChildren: () => import('../haizearenorrazia-jokua/haizearenorrazia-jokua.module').then( m => m.HaizearenorraziaJokuaPageModule)
+  },
 ];
 
 @NgModule({
