@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-haizearenorrazia-jokua',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HaizearenorraziaJokuaPage implements OnInit {
   erantzunEgokiak = ["Eduardo Chillida","Altzairuz","Ipar-mendebaldeko","3","9","Bere forma eta historiagatik","Eduardo txikitan joaten zen lekua zelako"]
+  
   list = [
     {galdera:"Haizearen orrazia ______ egin zuen" ,erantzunak:["Luis Gonzalez","Eduardo Chillida","Angel Linares"],isChecked: false},
     {galdera:"Haizearen orrazia ______ eginda dago", erantzunak:["Altzairuz","Kobrez","Aluminioz"], isChecked: false},
@@ -18,6 +20,11 @@ export class HaizearenorraziaJokuaPage implements OnInit {
     {galdera:"Leku horretan kokatuta dago...", erantzunak:["Eduardo txikitan joaten zen lekua zelako","Itsasoaren alboan egoteko","Leku hartan ondo geratzen zelako."], isChecked: false}
   ]
 
+  constructor(private router: Router,private alertCtrl: AlertController) { }
+
+  ngOnInit() {
+  }
+
   getSelectedItem(selectedItem){
     if(selectedItem == this.erantzunEgokiak[0]){
       console.log("Nice");
@@ -25,19 +32,20 @@ export class HaizearenorraziaJokuaPage implements OnInit {
         this.list.shift();
         this.erantzunEgokiak.shift();
       }else{
-        console.log("Amaituta");
         this.router.navigate(["/bukatu"]);
       }
     }else{
-      console.log("Yikes");
-      alert("Erantzun desegokia");
+      this.alert("Erantzun desegokia");
     }
     console.log(selectedItem);
   }
 
-  constructor(private router: Router) { }
-
-  ngOnInit() {
+  async alert(testua: string) {
+    const alert = await this.alertCtrl.create({
+      subHeader: testua,
+      backdropDismiss: true,
+      
+    });
+    await alert.present();
   }
-
 }

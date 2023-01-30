@@ -9,7 +9,6 @@ import { AlertController, NavController, ViewWillEnter } from '@ionic/angular';
 })
 export class LetraSopaJokuaPage implements ViewWillEnter {
   constructor(
-  private navCtrl: NavController,
     private alertCtrl: AlertController,
     private router: Router
   ) {}
