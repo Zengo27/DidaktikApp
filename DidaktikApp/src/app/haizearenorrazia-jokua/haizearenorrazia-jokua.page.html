@@ -1,23 +1,29 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>orraziGalderak</ion-title>
+    <ion-title>Galderak</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <body>
+  <div class="content">
+    <div class="fondoa"></div>
     <div id="container" *ngFor="let item of list | slice:0:1">
       <ion-card>
         <ion-card-content>
-          {{item.galdera}}
+          <p>{{item.galdera}}</p>
+
+          <ion-item *ngFor="let item2 of item.erantzunak ; let i = index">
+            <ion-label [(ngModel)]="item.erantzunak[i]" ngDefaultControl>{{item.erantzunak[i]}}</ion-label>
+            <ion-checkbox id="checkId" name="erantzuna" (ionChange)="getSelectedItem(item.erantzunak[i])" onchange="check()"></ion-checkbox>
+          </ion-item>
+          
+          <ion-button href="/jolasa">
+            <ion-icon slot="start" name="arrow-back-outline"></ion-icon> 
+            Testura Joan
+          </ion-button>
         </ion-card-content>
       </ion-card>
-      <ion-item *ngFor="let item2 of item.erantzunak ; let i = index">
-          <ion-label [(ngModel)]="item.erantzunak[i]" ngDefaultControl>{{item.erantzunak[i]}}</ion-label>
-          <ion-checkbox id="checkId" name="erantzuna" (ionChange)="getSelectedItem(item.erantzunak[i])" onchange="check()"></ion-checkbox>
-      </ion-item>
-      <ion-button href="/jolasa"> &larr; Testura Joan</ion-button>
     </div>
-  </body>
+  </div>
 </ion-content>
 <script>
   function check() {

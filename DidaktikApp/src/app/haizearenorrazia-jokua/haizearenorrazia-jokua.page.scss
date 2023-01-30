@@ -1,36 +1,55 @@
-$fondoa: "../../assets/images/fondo.png";
-#container{
+@import "../app.component";
+
+#container {
     display: flex;
     flex-direction: column;
     margin-top: 10%;
     align-items: center;
 }
-body {
-    background: url($fondoa)  no-repeat;
-}
-ion-card{
-    text-align: left;
-    overflow-y: scroll;
-}
-#erantzunak{
+
+.content {
+    overflow: hidden;
+    position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
-ion-label{
-    border: 2px solid white;
-    border-radius: 5px;
-    background-color: white;
-    padding-left: 13px;
-    padding-right: 13px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+
+.fondoa {
+    background: url($fondoko_argazkia);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.75;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
-ion-checkbox {
-    --size: 24px;
-    --background-checked: #6815ec;
-  }
-  
-  ion-checkbox::part(container) {
-    border-radius: 6px;
-    border: 2px solid #6815ec;
-  }
+
+ion-card-content {
+    text-align: center;
+    p {
+        margin-bottom: 10px;
+        color: $letra;
+        font-weight: bold;
+    }
+
+    ion-button{
+        margin-top: 10px;
+    }
+
+    ion-item {
+        display: flex;
+        flex-direction: column;
+        --ion-item-background: transparent;
+        background: none;
+
+        ion-checkbox {
+            align-self: flex-end;
+        }
+
+        ion-label {
+            font-size: 14px;
+        }
+    }
+}
