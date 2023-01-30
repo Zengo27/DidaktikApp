@@ -1,5 +1,16 @@
+@import "../app.component";
+
 ion-img {
     width: 45%;
+}
+
+.fondoa{
+    background: url($fondoko_argazkia);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.75;
+    height: 100%;
+    width: 100%;
 }
 
 .argazkiak {
@@ -8,4 +19,15 @@ ion-img {
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
+    position: absolute;
 }
+
+.content{
+    overflow: hidden;
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
