@@ -8,16 +8,16 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./haizearenorrazia-jokua.page.scss'],
 })
 export class HaizearenorraziaJokuaPage implements OnInit {
-  erantzunEgokiak = ["Eduardo Chillida","Altzairuz","Ipar-mendebaldeko","3","9","Bere forma eta historiagatik","Eduardo txikitan joaten zen lekua zelako"]
+  erantzunEgokiak = ["Eduardo Chillidak","altzairuz","Ipar-mendebaldeko","3","9","bere forma eta historiagatik","Eduardo txikitan joaten zen lekua zelako"]
   
   list = [
-    {galdera:"Haizearen orrazia ______ egin zuen" ,erantzunak:["Luis Gonzalez","Eduardo Chillida","Angel Linares"],isChecked: false},
-    {galdera:"Haizearen orrazia ______ eginda dago", erantzunak:["Altzairuz","Kobrez","Aluminioz"], isChecked: false},
-    {galdera:"Ondarretako hondartzaren ______ muturrean dago", erantzunak:["Ipar-mendebaldeko","Hego-mendebaldeko","Ipar-egoaldeko"],isChecked: false},
+    {galdera:"Haizearen orrazia ______ egin zuen" ,erantzunak:["Luis Gonzalez-ek","Eduardo Chillidak","Angel Linares-ek"],isChecked: false},
+    {galdera:"Haizearen orrazia ______ eginda dago", erantzunak:["altzairuz","kobrez","aluminioz"], isChecked: false},
+    {galdera:"Ondarretako hondartzaren ______ muturrean dago", erantzunak:["Ipar-mendebaldeko","Hego-mendebaldeko","Ipar-hegoaldeko"],isChecked: false},
     {galdera:"Haizeen orrazia ______ eskulturak osatzen dute", erantzunak:["4","2","3"], isChecked: false},
     {galdera:"__ tonatik gorako pisua du bakoitzak.", erantzunak:["5","7","9"],isChecked: false},
-    {galdera:"Haizearen orrazia berezia da...", erantzunak:["Bere formagatik","Bere forma eta historiagatik","Egileagatik"], isChecked: false},
-    {galdera:"Leku horretan kokatuta dago...", erantzunak:["Eduardo txikitan joaten zen lekua zelako","Itsasoaren alboan egoteko","Leku hartan ondo geratzen zelako."], isChecked: false}
+    {galdera:"Haizearen orrazia berezia da...", erantzunak:["bere formagatik","bere forma eta historiagatik","egileagatik"], isChecked: false},
+    {galdera:"Leku horretan kokatuta dago...", erantzunak:["Eduardo txikitan joaten zen lekua zelako","itsasoaren alboan egoteko","leku hartan ondo geratzen zelako."], isChecked: false}
   ]
 
   constructor(private router: Router,private alertCtrl: AlertController) { }
@@ -27,24 +27,20 @@ export class HaizearenorraziaJokuaPage implements OnInit {
 
   getSelectedItem(selectedItem){
     if(selectedItem == this.erantzunEgokiak[0]){
-      console.log("Nice");
-      if(this.list.length != 0){
-        this.list.shift();
-        this.erantzunEgokiak.shift();
-      }else{
+      this.list.shift();
+      this.erantzunEgokiak.shift();
+      if(this.list.length == 0){
         this.router.navigate(["/bukatu"]);
       }
     }else{
       this.alert("Erantzun desegokia");
     }
-    console.log(selectedItem);
   }
 
   async alert(testua: string) {
     const alert = await this.alertCtrl.create({
       subHeader: testua,
       backdropDismiss: true,
-      
     });
     await alert.present();
   }

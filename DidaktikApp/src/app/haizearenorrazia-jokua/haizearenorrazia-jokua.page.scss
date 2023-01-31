@@ -43,13 +43,11 @@ ion-card-content {
         flex-direction: column;
         --ion-item-background: transparent;
         background: none;
-
-        ion-checkbox {
-            align-self: flex-end;
-        }
+        cursor: pointer;
 
         ion-label {
             font-size: 14px;
+            margin-left: 5px;
         }
     }
 }
