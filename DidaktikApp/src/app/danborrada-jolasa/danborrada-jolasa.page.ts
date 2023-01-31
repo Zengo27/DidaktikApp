@@ -37,13 +37,14 @@ export class DanborradaJolasaPage implements ViewWillEnter {
   hurrengoa() {
     if (this.asmatuta < 3) {
       this.ans = document.getElementById('erantzuna');
-      if (this.ans.value == this.erantzunEgokiak[this.asmatuta]) {
+      if (this.ans.value.toLowerCase() == this.erantzunEgokiak[this.asmatuta].toLowerCase()) {
         this.asmatuta = this.asmatuta + 1;
-        document.getElementById('galdera').innerHTML =
-          this.galderak[this.asmatuta];
+        document.getElementById('galdera').innerHTML = this.galderak[this.asmatuta];
         this.ans.value = ""
       } else {
         this.alert('Erantzun okerra',false);
+        document.getElementById('galdera').innerHTML = this.galderak[this.asmatuta];
+        this.ans.value = ""
       }
     }
     else {
@@ -69,21 +70,7 @@ export class DanborradaJolasaPage implements ViewWillEnter {
     }else{
       alert = await this.alertCtrl.create({
         subHeader: testua,
-        backdropDismiss: false,
-        buttons: [
-          {
-            text: 'Mapara bueltatu',
-            handler: () => {
-              this.router.navigate(['/mapa']);
-            },
-          },
-          {
-            text: 'Saiatu berriro',
-            handler: () => {
-              window.location.reload();
-            },
-          },
-        ],
+        backdropDismiss: true,
       });
     }
     
