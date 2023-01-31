@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController, ViewWillEnter } from '@ionic/angular';
 import * as L from "leaflet";
 import { ModalPage } from '../modal/modal.page';
@@ -8,7 +8,7 @@ import { ModalPage } from '../modal/modal.page';
   templateUrl: './mapa.page.html',
   styleUrls: ['./mapa.page.scss'],
 })
-export class MapaPage implements ViewWillEnter {
+export class MapaPage implements OnInit {
 
   leafletMap: any;
   lat: number = 43.3152;
@@ -62,7 +62,7 @@ export class MapaPage implements ViewWillEnter {
 
   constructor(private alertCtrl: AlertController, private modalCtrl: ModalController) { }
 
-  ionViewWillEnter() {
+  ngOnInit() {
     this.mapaKargatu();
   }
 
