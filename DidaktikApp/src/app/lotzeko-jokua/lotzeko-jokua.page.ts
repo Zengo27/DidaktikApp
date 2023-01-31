@@ -16,13 +16,12 @@ export class LotzekoJokuaPage implements ViewWillEnter {
   aukeratzen = false;
   lehenAukeratua: any;
   bigarrenAukeratua: any;
-  asmatuta: number;
+  asmatuta: any;
   lehenId=0;
   ionViewWillEnter(): void {
     this.bidaiatu();
     this.asmatuta = 0;
     this.aukeratzen = false;
-
   }
 
   aukeratu(id: any) {
@@ -34,16 +33,16 @@ export class LotzekoJokuaPage implements ViewWillEnter {
       this.margotu(id);
     } else if (this.aukeratzen == true) {
       this.bigarrenAukeratua = element.id.slice(-1);
-      if (this.lehenAukeratua == this.bigarrenAukeratua) {
+      if (this.lehenAukeratua == this.bigarrenAukeratua && this.lehenId!=id) {
         this.margotu(id);
         this.aukeratzen = false;
         
-        var pimg = document.getElementById("p"+this.lehenId)as HTMLInputElement;
-        var ptxt = document.getElementById("p"+id)as HTMLInputElement;
+        var pimg = document.getElementById("d"+this.lehenId)as HTMLInputElement;
+        var ptxt = document.getElementById("d"+id)as HTMLInputElement;
 
-        pimg.style.color="#FFBD91";
-        ptxt.style.color="#FFBD91";
-        this.asmatuta = this.asmatuta + 1;
+        pimg.setAttribute("class","matched");
+        ptxt.setAttribute("class","matched");
+        
 
         this.bidaiatu();
       } else {
@@ -64,7 +63,7 @@ export class LotzekoJokuaPage implements ViewWillEnter {
     var pimg_4 = document.getElementById("pimg_4")as HTMLInputElement;
     var ptxt_4 = document.getElementById("ptxt_4")as HTMLInputElement;
 
-
+    
     if (element.id == 'img_1') {
       pimg_1.name="radio-button-on-outline";
     }
@@ -91,7 +90,8 @@ export class LotzekoJokuaPage implements ViewWillEnter {
     }
   }
   bidaiatu() {
-    if (this.asmatuta == 4) {
+    this.asmatuta = document.querySelectorAll(".matched");
+    if (this.asmatuta.length == 8) {
       this.alert('Denak asmatu dituzu!!', true);
       this.garbitu();
     }
