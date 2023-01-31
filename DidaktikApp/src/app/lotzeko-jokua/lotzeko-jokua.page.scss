@@ -37,7 +37,11 @@ ion-card{
     }
     
     a {
-        font-size: 24px;
+        font-size: 20px;
         cursor: pointer;
+    }
+    ion-icon{
+        color: $letra;
+        font-size: 18px;
     }
 }

@@ -41,8 +41,8 @@ export class LotzekoJokuaPage implements ViewWillEnter {
         var pimg = document.getElementById("p"+this.lehenId)as HTMLInputElement;
         var ptxt = document.getElementById("p"+id)as HTMLInputElement;
 
-        pimg.disabled=true;
-        ptxt.disabled=true;
+        pimg.style.color="#FFBD91";
+        ptxt.style.color="#FFBD91";
         this.asmatuta = this.asmatuta + 1;
 
         this.bidaiatu();
@@ -66,36 +66,28 @@ export class LotzekoJokuaPage implements ViewWillEnter {
 
 
     if (element.id == 'img_1') {
-      pimg_1.style.color = 'yellow';
-      pimg_1.checked=true;
+      pimg_1.name="radio-button-on-outline";
     }
     else if (element.id == 'txt_1') {
-      ptxt_1.style.color = 'yellow';
-      ptxt_1.checked=true;
+      ptxt_1.name="radio-button-on-outline";
     }
     else if (element.id == 'img_2') {
-      pimg_2.style.color = 'green';
-      pimg_2.checked=true;
+      pimg_2.name="radio-button-on-outline";
     }
     else if (element.id == 'txt_2') {
-      ptxt_2.style.color = 'green';
-      ptxt_2.checked=true;
+      ptxt_2.name="radio-button-on-outline";
     }
     else if (element.id == 'img_3') {
-      pimg_3.style.color = 'red';
-      pimg_3.checked=true;
+      pimg_3.name="radio-button-on-outline";
     }
     else if (element.id == 'txt_3') {
-      ptxt_3.style.color = 'red';
-      ptxt_3.checked=true;
+      ptxt_3.name="radio-button-on-outline";
     }
     else if (element.id == 'img_4') {
-      pimg_4.style.color = 'blue';
-      pimg_4.checked=true;
+      pimg_4.name="radio-button-on-outline";
     }
     else if (element.id == 'txt_4') {
-      ptxt_4.style.color = 'blue';
-      ptxt_4.checked=true;
+      ptxt_4.name="radio-button-on-outline";
     }
   }
   bidaiatu() {
@@ -106,44 +98,27 @@ export class LotzekoJokuaPage implements ViewWillEnter {
   }
   garbitu() {
     var element = document.getElementById('pimg_1')as HTMLInputElement;
-    element.style.color = 'black';
-    element.checked=false;
-    element.disabled=false;
+    element.name="radio-button-off-outline";
     var element = document.getElementById('ptxt_1')as HTMLInputElement;
-    element.style.color = 'black';
-    element.checked=false;
-    element.disabled=false;
+    element.name="radio-button-off-outline";
     var element = document.getElementById('pimg_2')as HTMLInputElement;
-    element.style.color = 'black';
-    element.checked=false;
-    element.disabled=false;
+    element.name="radio-button-off-outline";
     var element = document.getElementById('ptxt_2')as HTMLInputElement;
-    element.style.color = 'black';
-    element.checked=false;
-    element.disabled=false;
+    element.name="radio-button-off-outline";
     var element = document.getElementById('pimg_3')as HTMLInputElement;
-    element.style.color = 'black';
-    element.checked=false;
-    element.disabled=false;
+    element.name="radio-button-off-outline";
     var element = document.getElementById('ptxt_3')as HTMLInputElement;
-    element.style.color = 'black';
-    element.checked=false;
-    element.disabled=false;
+    element.name="radio-button-off-outline";
     var element = document.getElementById('pimg_4')as HTMLInputElement;
-    element.style.color = 'black';
-    element.checked=false;
-    element.disabled=false;
+    element.name="radio-button-off-outline";
     var element = document.getElementById('ptxt_4')as HTMLInputElement;
-    element.style.color = 'black';
-    element.checked=false;
-    element.disabled=false;
+    element.name="radio-button-off-outline";
 
     this.lehenAukeratua = "";
     this.bigarrenAukeratua = "";
     this.asmatuta = 0;
     this.lehenId = 0;
     this.aukeratzen = false;
-
   }
 
   async alert(testua: string, lortu:boolean) {
