@@ -53,6 +53,7 @@ export class LetraSopaJokuaPage implements ViewWillEnter {
 
   printSoup() {
     this.sopa = document.getElementById('sopa');
+    this.sopa.style="text-align:center;"
 
     this.sopa.addEventListener('touchstart', (event) => {
       this.aukeratu(event.target.id);
@@ -67,6 +68,7 @@ export class LetraSopaJokuaPage implements ViewWillEnter {
         this.divcolumn = document.createElement('div');
         this.divcolumn.setAttribute('id', 'div' + 'Y:' + j + 'X:' + i);
         this.divcolumn.setAttribute('class', 'divcolumn');
+        this.divcolumn.style="padding:2px;"
 
         this.divcolumn.textContent = this.soup[i * this.size + j];
         this.divrow.appendChild(this.divcolumn);
@@ -287,7 +289,7 @@ export class LetraSopaJokuaPage implements ViewWillEnter {
     this.divcolumn = document.getElementById(id);
     this.margotu(id);
     this.aukeratutakoHitza =
-      this.aukeratutakoHitza + this.divcolumn.textContent;
+    this.aukeratutakoHitza + this.divcolumn.textContent;
     this.hitzSplit.push(String(this.divcolumn.id));
     this.idAukera.push(this.divcolumn.id);
   }
@@ -298,6 +300,7 @@ export class LetraSopaJokuaPage implements ViewWillEnter {
         this.baieztatuta = true;
         this.tatxatuHitza = document.getElementById('hitza' + i);
         this.tatxatuHitza.setAttribute('style', 'text-decoration: line-through;');
+        this.tatxatuHitza.style.margin="2px";
         this.asmatuta = this.asmatuta + 1;
         for (var j = 0; j < this.idAukera.length; j++) {
           this.idEgokiak.push(this.idAukera[j]);
@@ -317,20 +320,20 @@ export class LetraSopaJokuaPage implements ViewWillEnter {
   }
   margotu(id: any) {
     this.divcolumn = document.getElementById(id);
-    this.divcolumn.setAttribute('style', 'background-color: orange;');
+    this.divcolumn.setAttribute('style', 'background-color: orange;padding:2px;');
   }
   ezabatu() {
     for (var i = 0; i < this.size; i++) {
       for (var j = 0; j < this.size; j++) {
         this.divcolumn = document.getElementById('div' + 'Y:' + i + 'X:' + j);
-        this.divcolumn.setAttribute('style', 'background-color: none;');
+        this.divcolumn.setAttribute('style', 'background-color: none;padding:2px;');
       }
     }
   }
   egokiakMargotu() {
     for (var i = 0; i < this.idEgokiak.length; i++) {
       this.divcolumn = document.getElementById(this.idEgokiak[i]);
-      this.divcolumn.setAttribute('style', 'background-color: orange;');
+      this.divcolumn.setAttribute('style', 'background-color: orange;padding:2px;');
     }
   }
   async alert(testua: string) {
