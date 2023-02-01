@@ -131,7 +131,7 @@ export class LotzekoJokuaPage implements ViewWillEnter {
           {
             text: 'Hurrengo jolasa',
             handler: () => {
-              this.router.navigateByUrl('/katedrala-jolasa');
+              this.router.navigate(['/katedrala-jolasa']);
             },
           },
         ],

@@ -342,15 +342,9 @@ export class LetraSopaJokuaPage implements ViewWillEnter {
       backdropDismiss: false,
       buttons: [
         {
-          text: 'Saiatu berriro',
+          text: 'Bukatu',
           handler: () => {
-            window.location.reload();
-          },
-        },
-        {
-          text: 'Mapara bueltatu',
-          handler: () => {
-            this.router.navigateByUrl('/mapa');
+            this.router.navigate(['/bukatu']);
           },
         },
       ],
