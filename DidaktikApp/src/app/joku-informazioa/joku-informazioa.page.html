@@ -20,7 +20,7 @@
       </ion-card-header>
       
       <ion-card-content>
-        <div  *ngIf="lekua == 1">
+        <div *ngIf="lekua == 1">
           <p>Bikoteak buruz behera daude.</p>
           <span class="brmedium"></span> 
           <p>Lotu karta bakoitza bere bikotearekin.</p>
@@ -28,13 +28,20 @@
           <p>Ondo memorizatu hurrengo argazkiak.</p>
         </div>
           
-        <p *ngIf="lekua == 5">Abuztuaren 31 oso data berezia da Donostiarrentzat. Egun
-          horretan, 1813an espainiarrekin aliatuta zeuden tropa
-          anglo-portugaldarrek <b>hiri osoa suntsitu eta erre</b> zutela
-          gogoratzen baita; hala ere, <b>kale bat salbatu</b> zen: abuztuaren
-          <b>31 kalea</b> izena jarri ziotena.</p>
+        <div *ngIf="lekua == 5">
+          <p>Bilatu hitzazu hitz hauek hizki sopan</p>
+          <div class="grid">
+            <p>Batailak</p>
+            <p>Desfileak</p>
+            <p>Napoleon</p>
+            <p>Suntsitu</p>
+            <p>Sutea</p>
+            <p>Berreraiki</p>
+            <p>Kandelak</p>
+          </div>
+        </div>
 
-        <div  *ngIf="lekua == 6">
+        <div *ngIf="lekua == 6">
           <p>Puzzlearen piezak nahastuta daude</p>
           <span class="brmedium"></span> 
           <p>Lehengo aukeratu zer pieza nahi duzun aldatzea eta gero posizioa</p>
@@ -48,7 +55,7 @@
 
     <ion-button *ngIf="lekua == 6" [routerLink]="['puzzlea']">Jolasten hasi 
     </ion-button>
-    <ion-button *ngIf="lekua == 5" [routerLink]="['letra-sopa-info']">Jarraitu 
+    <ion-button *ngIf="lekua == 5" [routerLink]="['letra-sopa-jokua']">Jarraitu 
       <ion-icon name="arrow-forward"  end></ion-icon>
     </ion-button>
   </div>

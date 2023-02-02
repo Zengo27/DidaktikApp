@@ -27,11 +27,16 @@ export class KatedralaJolasaPage implements OnInit {
       console.log("Nice");
       this.router.navigate(["/bukatu"]);
     }else{
+      this.garbitu();
       this.alert('Erantzun okerra', false);
     }
     console.log(selectedItem.value);
   }
 
+  garbitu(){
+    
+  }
+  
   async alert(testua: string, lortu:boolean) {
     let alert=null;
     if(lortu){

@@ -11,10 +11,9 @@ const routes: Routes = [
     path: 'igeldo-argazkiak',
     loadChildren: () => import('../igeldo-argazkiak/igeldo-argazkiak.module').then( m => m.IgeldoArgazkiakPageModule)
   },{
-    path: 'letra-sopa-info',
-    loadChildren: () => import('../letra-sopa-info/letra-sopa-info.module').then( m => m.LetraSopaInfoPageModule)
-  }
-  ,
+    path: 'letra-sopa-jokua',
+    loadChildren: () => import('../letra-sopa-jokua/letra-sopa-jokua.module').then( m => m.LetraSopaJokuaPageModule)
+  },
   {
     path: 'puzzlea',
     loadChildren: () => import('../puzzlea/puzzlea.module').then( m => m.PuzzleaPageModule)

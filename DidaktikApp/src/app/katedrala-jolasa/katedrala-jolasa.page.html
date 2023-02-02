@@ -14,10 +14,12 @@
 
           <div id="erantzunak">
             <div id="erantzunak2">
-              <ion-item *ngFor="let item of list">
-                <ion-label>{{item.value}}</ion-label>
-                <ion-checkbox name="erantzuna1" [(ngModel)]="item.isChecked" (ionChange)="getSelectedItem(item)"></ion-checkbox>
-              </ion-item>
+              <div *ngFor="let item of list">
+                <ion-item (click)="getSelectedItem(item)">
+                  <ion-label>{{item.value}}</ion-label>
+                  <ion-icon name="radio-button-off-outline"></ion-icon>
+                </ion-item>
+              </div>
             </div>
           </div>
         </ion-card-content>

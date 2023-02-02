@@ -1,29 +1,27 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>orraziGalderak</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Galderak</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <body>
+  <div class="content">
+    <div class="fondoa"></div>
     <div id="container" *ngFor="let item of list | slice:0:1">
       <ion-card>
         <ion-card-content>
-          {{item.galdera}}
+          <p>{{item.galdera}}</p>
+
+          <div *ngFor="let item2 of item.erantzunak ; let i = index">
+            <ion-item (click)="getSelectedItem(item.erantzunak[i])">
+              <ion-icon name="radio-button-off-outline"></ion-icon>
+              <ion-label [(ngModel)]="item.erantzunak[i]" ngDefaultControl >{{item.erantzunak[i]}}</ion-label>
+            </ion-item>
+          </div>
         </ion-card-content>
       </ion-card>
-      <ion-item *ngFor="let item2 of item.erantzunak ; let i = index">
-          <ion-label [(ngModel)]="item.erantzunak[i]" ngDefaultControl>{{item.erantzunak[i]}}</ion-label>
-          <ion-checkbox id="checkId" name="erantzuna" (ionChange)="getSelectedItem(item.erantzunak[i])" onchange="check()"></ion-checkbox>
-      </ion-item>
-      <ion-button href="/jolasa"> &larr; Testura Joan</ion-button>
     </div>
-  </body>
+  </div>
 </ion-content>
-<script>
-  function check() {
-    var input = document.getElementById('checkId');
-    if(input.checked == true){
-      input.checked = !input.checked;
-    }
-  }
-</script>

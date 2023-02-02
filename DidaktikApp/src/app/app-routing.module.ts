@@ -60,10 +60,6 @@ const routes: Routes = [
     loadChildren: () => import('./danborrada-jolasa/danborrada-jolasa.module').then( m => m.DanborradaJolasaPageModule)
   },
   {
-    path: 'letra-sopa-info',
-    loadChildren: () => import('./letra-sopa-info/letra-sopa-info.module').then( m => m.LetraSopaInfoPageModule)
-  },
-  {
     path: 'letra-sopa-jokua',
     loadChildren: () => import('./letra-sopa-jokua/letra-sopa-jokua.module').then( m => m.LetraSopaJokuaPageModule)
   },

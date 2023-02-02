@@ -27,7 +27,6 @@ ion-title{
     gap: 2rem;
     justify-content: center;
     align-items: center;
-    opacity: 75%;
     margin-left: 20%;
     margin-right: 20%;
 }
@@ -45,11 +44,15 @@ ion-title{
 .divcolumn {
     display: flex;
     flex-direction: column;
-
 }
 .hitzak {
     background-color: white;
     height: min-content;
     width: min-content;
+    display: grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 5px;
+    grid-template-columns: repeat(2,1fr);
+    padding: 5px;
 }
-
+// this.divcolumn.style.padding="2px";

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { AlertController, ModalController, ViewWillEnter } from '@ionic/angular';
 import * as L from "leaflet";
 import { ModalPage } from '../modal/modal.page';
@@ -9,7 +9,7 @@ import { ModalPage } from '../modal/modal.page';
   templateUrl: './mapa.page.html',
   styleUrls: ['./mapa.page.scss'],
 })
-export class MapaPage implements ViewWillEnter {
+export class MapaPage implements AfterViewInit {
 
   leafletMap: any;
   lat: number = 43.3152;
@@ -66,7 +66,7 @@ export class MapaPage implements ViewWillEnter {
 
   constructor(private alertCtrl: AlertController, private modalCtrl: ModalController,private route: ActivatedRoute) { }
 
-  ionViewWillEnter() {
+  ngAfterViewInit() {
     this.mapaKargatu();
     this.sessionList = String(this.route.snapshot.paramMap.get('sesioa')).split("-");
     this.sessionImgSrc = "../../assets/images/"+this.sessionList[1];
