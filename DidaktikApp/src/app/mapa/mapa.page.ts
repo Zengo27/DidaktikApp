@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AlertController, ModalController, ViewWillEnter } from '@ionic/angular';
 import * as L from "leaflet";
 import { ModalPage } from '../modal/modal.page';
@@ -14,6 +15,9 @@ export class MapaPage implements ViewWillEnter {
   lat: number = 43.3152;
   lng: number = -2.009;
   zoom: number = 13;
+  sessionImgSrc: any;
+  sessionName: any;
+  sessionList: any;
 
   listOfMarkers = [
     {
@@ -60,10 +64,18 @@ export class MapaPage implements ViewWillEnter {
     },
   ];
 
-  constructor(private alertCtrl: AlertController, private modalCtrl: ModalController) { }
+  constructor(private alertCtrl: AlertController, private modalCtrl: ModalController,private route: ActivatedRoute) { }
 
   ionViewWillEnter() {
     this.mapaKargatu();
+    this.sessionList = String(this.route.snapshot.paramMap.get('sesioa')).split("-");
+    this.sessionImgSrc = "../../assets/images/"+this.sessionList[1];
+    if (typeof this.sessionList[0].contains('string')) {
+      this.sessionName = this.sessionList[0];
+    }
+    else {
+      alert('is not a string ;(');
+    }
   }
 
   mapaKargatu() {

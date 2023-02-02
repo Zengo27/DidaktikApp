@@ -1,0 +1,17 @@
+.usuarioa {
+    display: flex;
+    flex-direction: row;
+}
+.usuarioa img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+}
+.usuarioa ion-text {
+    margin: 25px;
+    margin-right: 0;
+}
+ion-title {
+    text-align: left;
+}

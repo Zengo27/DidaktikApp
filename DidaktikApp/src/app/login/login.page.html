@@ -5,18 +5,17 @@
         <p id="nor">Nor zara?</p>
         <div id="animalia">
           <p>Aukeratu zure gustuko animalia</p>
-          <img src="../../assets/images/Arrain.png" width="25" height="25">
-          <img src="../../assets/images/Hipo.png" width="25" height="25">
-          <img src="../../assets/images/Igel.png" width="25" height="25">
-          <img src="../../assets/images/Txori.png" width="25" height="25">
+          <img id="0" src="../../assets/images/Arrain.png" width="25" height="25" (click)="ikonoaGorde('../../assets/images/Arrain.png','0')">
+          <img id="1" src="../../assets/images/Hipo.png" width="25" height="25" (click)="ikonoaGorde('../../assets/images/Hipo.png','1')">
+          <img id="2" src="../../assets/images/Igel.png" width="25" height="25" (click)="ikonoaGorde('../../assets/images/Igel.png','2')">
+          <img id="3" src="../../assets/images/Txori.png" width="25" height="25" (click)="ikonoaGorde('../../assets/images/Txori.png','3')">
         </div>
       </div>
       <div id="izena">
         <ion-label>Zein da zure izena?</ion-label>
-        <ion-input placeholder="Izena"></ion-input>
+        <ion-input placeholder="Izena" [(ngModel)]="aukeratutakoIzena" pattern="[A-Za-z]{15}"></ion-input>
       </div>
-
-      <ion-button href="/mapa">Hasi</ion-button>
+      <ion-button (click)="aukerakPasatu()">Hasi</ion-button>
     </div>
     </body>
   </ion-content>

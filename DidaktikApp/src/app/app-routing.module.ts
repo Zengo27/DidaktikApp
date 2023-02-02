@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'mapa',
+    path: 'mapa/:sesioa',
     loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
   },
   {
