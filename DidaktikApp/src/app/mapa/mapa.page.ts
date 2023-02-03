@@ -69,20 +69,23 @@ export class MapaPage implements AfterViewInit {
   ngAfterViewInit() {
     this.mapaKargatu();
     this.sessionList = String(this.route.snapshot.paramMap.get('sesioa')).split("-");
-    console.log(this.sessionList[1]);
+    
+    
     if (this.sessionList[1] == null) {
       this.sessionImgSrc = document.getElementById('irudia');
       this.sessionImgSrc.remove(this.sessionImgSrc);
     }
     else {
-      this.sessionImgSrc = "../../assets/images/"+this.sessionList[1];
+      this.sessionImgSrc = this.sessionList[Object.keys(this.sessionList).length - 1].replace(/[-]+/g, '');
+      this.sessionImgSrc = "../../assets/images/"+this.sessionImgSrc;
     }
 
     if (this.sessionList[0] == "undefined" || this.sessionList[0] == "null") {
       this.sessionName = " ";
     }
     else {
-      this.sessionName = this.sessionList[0];
+      this.sessionName = this.sessionList[0].replace(/[^A-Za-z]+/g, '');
+      this.sessionName = this.sessionName.toUpperCase();
     }
   }
 
