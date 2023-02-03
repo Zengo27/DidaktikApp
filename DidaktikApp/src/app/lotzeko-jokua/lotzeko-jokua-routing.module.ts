@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: LotzekoJokuaPage
-  }
+  },
+  {
+    path: 'katedrala-jolasa',
+    loadChildren: () => import('../katedrala-jolasa/katedrala-jolasa.module').then( m => m.KatedralaJolasaPageModule)
+  },
 ];
 
 @NgModule({

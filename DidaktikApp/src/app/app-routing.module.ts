@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
   },
   {
+    path: 'mapa',
+    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
+  },
+  {
     path: 'modal',
     loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
   },
@@ -62,14 +66,6 @@ const routes: Routes = [
   {
     path: 'letra-sopa-jokua',
     loadChildren: () => import('./letra-sopa-jokua/letra-sopa-jokua.module').then( m => m.LetraSopaJokuaPageModule)
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
-  {
-    path: 'mapa',
-    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
   },
   {
     path: 'modal',

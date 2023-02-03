@@ -78,7 +78,7 @@ export class PuzzleaPage implements OnInit {
         }
       }
       if(completo){
-          this.router.navigate(['/bukatu']);
+          this.router.navigateByUrl('bukatu');
       }
   }
 }

@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'mapa',
-    redirectTo: 'mapa',
+    loadChildren: () => import('../mapa/mapa.module').then( m => m.MapaPageModule)
   }
 ];
 

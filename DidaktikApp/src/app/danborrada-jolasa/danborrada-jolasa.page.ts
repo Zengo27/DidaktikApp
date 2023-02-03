@@ -62,7 +62,7 @@ export class DanborradaJolasaPage implements ViewWillEnter {
           {
             text: 'Bukatu',
             handler: () => {
-              this.router.navigate(['/bukatu']);
+              this.router.navigateByUrl('bukatu');
             },
           },
         ],

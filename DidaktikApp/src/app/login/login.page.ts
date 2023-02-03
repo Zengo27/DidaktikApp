@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController, ViewWillEnter } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
 import { File } from '@awesome-cordova-plugins/file/ngx';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { File } from '@awesome-cordova-plugins/file/ngx';
 export class LoginPage implements OnInit {
   
 
-  constructor(private modalCtrl: ModalController) { }
+  constructor(private modalCtrl: ModalController, private router:Router) { }
 
   
   aukeratutakoIkonoa: any;
@@ -33,8 +34,7 @@ export class LoginPage implements OnInit {
     this.irudia.setAttribute('style', 'background-color: orange;');
   }
   aukerakPasatu() {
-    window.location.href = ('mapa/'+this.aukeratutakoIzena+'-'+this.aukeratutakoIkonoa.slice(20));
-    
+    this.router.navigateByUrl("mapa/"+this.aukeratutakoIzena+'-'+this.aukeratutakoIkonoa.slice(20))
   }
 
 

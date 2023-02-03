@@ -25,7 +25,7 @@ export class KatedralaJolasaPage implements OnInit {
   getSelectedItem(selectedItem){
     if(selectedItem.value == this.egokia){
       console.log("Nice");
-      this.router.navigate(["/bukatu"]);
+      this.router.navigateByUrl("bukatu");
     }else{
       this.garbitu();
       this.alert('Erantzun okerra', false);
@@ -47,7 +47,7 @@ export class KatedralaJolasaPage implements OnInit {
           {
             text: 'Hurrengo jolasa',
             handler: () => {
-              this.router.navigateByUrl('/bukatu');
+              this.router.navigateByUrl('bukatu/');
             },
           },
         ],
@@ -60,7 +60,7 @@ export class KatedralaJolasaPage implements OnInit {
           {
             text: 'Mapara bueltatu',
             handler: () => {
-              this.router.navigate(['/mapa']);
+              this.router.navigateByUrl('mapa/');
             },
           },
           {

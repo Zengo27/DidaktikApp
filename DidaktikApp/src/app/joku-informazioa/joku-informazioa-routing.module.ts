@@ -7,10 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: JokuInformazioaPage
-  },{
+  },
+  {
     path: 'igeldo-argazkiak',
     loadChildren: () => import('../igeldo-argazkiak/igeldo-argazkiak.module').then( m => m.IgeldoArgazkiakPageModule)
-  },{
+  },
+  {
     path: 'letra-sopa-jokua',
     loadChildren: () => import('../letra-sopa-jokua/letra-sopa-jokua.module').then( m => m.LetraSopaJokuaPageModule)
   },

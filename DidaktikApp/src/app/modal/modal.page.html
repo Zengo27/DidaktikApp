@@ -6,11 +6,11 @@
 
 <ion-content>
 
-  <ion-button *ngIf="title == 'Igeldo mendia'" [routerLink]="['leku-informazioa', 1]">Joan jolasera</ion-button>
-  <ion-button *ngIf="title == 'Haizearen Orrazia'" [routerLink]="['leku-informazioa', 2]">Joan jolasera</ion-button>
-  <ion-button *ngIf="title == 'Artzain Onaren Katedrala'" [routerLink]="['leku-informazioa', 3]">Joan jolasera</ion-button>
-  <ion-button *ngIf="title == 'Danborrada'" [routerLink]="['leku-informazioa', 4]">Joan jolasera</ion-button>
-  <ion-button *ngIf="title == 'Abuztuak 31 kalea'" [routerLink]="['leku-informazioa', 5]">Joan jolasera</ion-button>
-  <ion-button *ngIf="title == 'San Telmo Museoa'" [routerLink]="['leku-informazioa', 6]">Joan jolasera</ion-button>
+  <ion-button *ngIf="title == 'Igeldo mendia'" (click)="informazioraJoan(1)">Joan jolasera</ion-button>
+  <ion-button *ngIf="title == 'Haizearen Orrazia'" (click)="informazioraJoan(2)">Joan jolasera</ion-button>
+  <ion-button *ngIf="title == 'Artzain Onaren Katedrala'" (click)="informazioraJoan(3)">Joan jolasera</ion-button>
+  <ion-button *ngIf="title == 'Danborrada'" (click)="informazioraJoan(4)">Joan jolasera</ion-button>
+  <ion-button *ngIf="title == 'Abuztuak 31 kalea'" (click)="informazioraJoan(5)">Joan jolasera</ion-button>
+  <ion-button *ngIf="title == 'San Telmo Museoa'" (click)="informazioraJoan(6)">Joan jolasera</ion-button>
 
 </ion-content>

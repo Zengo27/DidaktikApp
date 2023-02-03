@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { InfiniteScrollCustomEvent, ModalController} from '@ionic/angular';
 
 @Component({
@@ -11,10 +11,14 @@ export class LekuInformazioaPage implements OnInit {
 
   lekua:number;
 
-  constructor(private route: ActivatedRoute,private modalCtrl: ModalController) { }
+  constructor(private route: ActivatedRoute,private modalCtrl: ModalController,private router:Router) { }
 
   ngOnInit() {
     this.lekua= Number(this.route.snapshot.paramMap.get('lekua'));
     this.modalCtrl.dismiss();
+  }
+
+  jokura(lekua:string){
+    this.router.navigateByUrl("leku-informazioa/"+this.lekua+"/"+lekua);
   }
 }

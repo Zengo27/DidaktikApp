@@ -50,12 +50,12 @@
       </ion-card-content>
     </ion-card>
 
-    <ion-button *ngIf="lekua == 1" [routerLink]="['igeldo-argazkiak']">Jolasten hasi 
+    <ion-button *ngIf="lekua == 1" (click)="jokuak('igeldo-argazkiak')">Jolasten hasi 
     </ion-button>
 
-    <ion-button *ngIf="lekua == 6" [routerLink]="['puzzlea']">Jolasten hasi 
+    <ion-button *ngIf="lekua == 6" (click)="jokuak('puzzlea')">Jolasten hasi 
     </ion-button>
-    <ion-button *ngIf="lekua == 5" [routerLink]="['letra-sopa-jokua']">Jarraitu 
+    <ion-button *ngIf="lekua == 5" (click)="jokuak('letra-sopa-jokua')">Jarraitu 
       <ion-icon name="arrow-forward"  end></ion-icon>
     </ion-button>
   </div>

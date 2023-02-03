@@ -30,7 +30,7 @@ export class HaizearenorraziaJokuaPage implements OnInit {
       this.list.shift();
       this.erantzunEgokiak.shift();
       if(this.list.length == 0){
-        this.router.navigate(["/bukatu"]);
+        this.router.navigateByUrl("bukatu");
       }
     }else{
       this.alert("Erantzun desegokia");

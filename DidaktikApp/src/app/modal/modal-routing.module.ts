@@ -7,6 +7,15 @@ const routes: Routes = [
   {
     path: '',
     component: ModalPage
+  },
+  {
+    path: 'leku-informazioa/:lekua',
+    children:[
+      {
+        path:"",
+        loadChildren: () => import('../leku-informazioa/leku-informazioa.module').then( m => m.LekuInformazioaPageModule)
+      }
+    ]
   }
 ];
 

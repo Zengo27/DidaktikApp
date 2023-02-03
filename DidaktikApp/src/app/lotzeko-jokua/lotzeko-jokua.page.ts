@@ -8,7 +8,7 @@ import { clear } from 'console';
   templateUrl: './lotzeko-jokua.page.html',
   styleUrls: ['./lotzeko-jokua.page.scss'],
 })
-export class LotzekoJokuaPage implements ViewWillEnter {
+export class LotzekoJokuaPage implements OnInit {
   constructor(
     private alertCtrl: AlertController,
     private router: Router
@@ -18,7 +18,7 @@ export class LotzekoJokuaPage implements ViewWillEnter {
   bigarrenAukeratua: any;
   asmatuta: any;
   lehenId=0;
-  ionViewWillEnter(): void {
+  ngOnInit(): void {
     this.bidaiatu();
     this.asmatuta = 0;
     this.aukeratzen = false;
@@ -37,11 +37,16 @@ export class LotzekoJokuaPage implements ViewWillEnter {
         this.margotu(id);
         this.aukeratzen = false;
         
-        var pimg = document.getElementById("d"+this.lehenId)as HTMLInputElement;
-        var ptxt = document.getElementById("d"+id)as HTMLInputElement;
+        var dimg = document.getElementById("d"+this.lehenId)as HTMLInputElement;
+        var dtxt = document.getElementById("d"+id)as HTMLInputElement;
 
-        pimg.setAttribute("class","matched");
-        ptxt.setAttribute("class","matched");
+        var pimg = document.getElementById("p"+this.lehenId)as HTMLInputElement;
+        var ptxt = document.getElementById("p"+id)as HTMLInputElement;
+        pimg.style.color="#FFBD91"
+        ptxt.style.color="#FFBD91"
+
+        dimg.classList.add("matched");
+        dtxt.classList.add("matched");
         
 
         this.bidaiatu();
@@ -99,20 +104,35 @@ export class LotzekoJokuaPage implements ViewWillEnter {
   garbitu() {
     var element = document.getElementById('pimg_1')as HTMLInputElement;
     element.name="radio-button-off-outline";
+    element.style.color="#FF6600";
     var element = document.getElementById('ptxt_1')as HTMLInputElement;
     element.name="radio-button-off-outline";
+    element.style.color="#FF6600";
     var element = document.getElementById('pimg_2')as HTMLInputElement;
     element.name="radio-button-off-outline";
+    element.style.color="#FF6600";
     var element = document.getElementById('ptxt_2')as HTMLInputElement;
     element.name="radio-button-off-outline";
+    element.style.color="#FF6600";
     var element = document.getElementById('pimg_3')as HTMLInputElement;
     element.name="radio-button-off-outline";
+    element.style.color="#FF6600";
     var element = document.getElementById('ptxt_3')as HTMLInputElement;
     element.name="radio-button-off-outline";
+    element.style.color="#FF6600";
     var element = document.getElementById('pimg_4')as HTMLInputElement;
     element.name="radio-button-off-outline";
+    element.style.color="#FF6600";
     var element = document.getElementById('ptxt_4')as HTMLInputElement;
     element.name="radio-button-off-outline";
+    element.style.color="#FF6600";
+
+    for(let i=1;i<=4;i++){
+      var pimg = document.getElementById("dimg_"+i)as HTMLInputElement;
+      var ptxt = document.getElementById("dtxt_"+i)as HTMLInputElement;
+      pimg.classList.remove("matched");
+      ptxt.classList.remove("matched");
+    }
 
     this.lehenAukeratua = "";
     this.bigarrenAukeratua = "";
@@ -131,7 +151,7 @@ export class LotzekoJokuaPage implements ViewWillEnter {
           {
             text: 'Hurrengo jolasa',
             handler: () => {
-              this.router.navigate(['/katedrala-jolasa']);
+              this.router.navigateByUrl("leku-informazioa/3/lotzeko-jokua/katedrala-jolasa");
             },
           },
         ],
@@ -144,7 +164,7 @@ export class LotzekoJokuaPage implements ViewWillEnter {
           {
             text: 'Mapara bueltatu',
             handler: () => {
-              this.router.navigate(['/mapa']);
+              this.router.navigateByUrl('mapa');
             },
           },
           {

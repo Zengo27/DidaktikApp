@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal',
@@ -9,10 +9,12 @@ import { Title } from '@angular/platform-browser';
 export class ModalPage implements OnInit {
 
   title:string;
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
     console.log(this.title);
   }
-
+  informazioraJoan(id){
+    this.router.navigateByUrl("leku-informazioa/"+id)
+  }
 }

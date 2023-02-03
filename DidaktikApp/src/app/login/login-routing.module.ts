@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: LoginPage
+  },
+  {
+    path: 'mapa/:sesioa',
+    loadChildren: () => import('../mapa/mapa.module').then( m => m.MapaPageModule)
   }
 ];
 

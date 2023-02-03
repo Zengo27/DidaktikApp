@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: LetraSopaJokuaPage
+  },
+  {
+    path: 'bukatu',
+    loadChildren: () => import('../bukatu/bukatu.module').then( m => m.BukatuPageModule)
   }
 ];
 
