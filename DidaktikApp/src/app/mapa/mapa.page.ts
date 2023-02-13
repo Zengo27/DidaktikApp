@@ -1,8 +1,9 @@
 import { ActivatedRoute } from '@angular/router';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { AlertController, ModalController, ViewWillEnter } from '@ionic/angular';
+import { AfterViewInit, Component } from '@angular/core';
+import { AlertController, ModalController } from '@ionic/angular';
 import * as L from "leaflet";
 import { ModalPage } from '../modal/modal.page';
+import { LekuakService } from '../services/lekuak.service';
 
 @Component({
   selector: 'app-mapa',
@@ -19,77 +20,16 @@ export class MapaPage implements AfterViewInit {
   sessionName: any;
   sessionList: any;
 
-  listOfMarkers = [
-    {
-      //Igeldo
-      lat: 43.30964,
-      lng: -2.03707,
-      icon: "../../assets/icon/marker.png",
-      izena: "Igeldo mendia",
-    },
-    {
-      //Haize orrazia
-      lat: 43.32169,
-      lng: -2.00555,
-      icon: "../../assets/icon/marker.png",
-      izena: "Haizearen Orrazia",
-    },
-    {
-      //Katedrala
-      lat: 43.31668,
-      lng: -1.98154,
-      icon: "../../assets/icon/marker.png",
-      izena: "Artzain Onaren Katedrala",
-    },
-    {
-      //Danborrada
-      lat: 43.32357,
-      lng: -1.98495,
-      icon: "../../assets/icon/marker.png",
-      izena: "Danborrada",
-    },
-    {
-      //Abuzutak 31
-      lat: 43.32407,
-      lng: -1.98574,
-      icon: "../../assets/icon/marker.png",
-      izena: "Abuztuak 31 kalea",
-    },
-    {
-      //San Telmo
-      lat: 43.32504,
-      lng: -1.98504,
-      icon: "../../assets/icon/marker.png",
-      izena: "San Telmo Museoa",
-    },
-  ];
+  listOfMarkers = [];
 
-  constructor(private alertCtrl: AlertController, private modalCtrl: ModalController,private route: ActivatedRoute) { }
+  constructor(private alertCtrl: AlertController, private modalCtrl: ModalController, private route: ActivatedRoute, private lekuaService: LekuakService) { }
 
   ngAfterViewInit() {
     this.mapaKargatu();
-    this.sessionList = String(this.route.snapshot.paramMap.get('sesioa')).split("-");
-    
-    
-    if (this.sessionList[1] == null) {
-      this.sessionImgSrc = document.getElementById('irudia');
-      this.sessionImgSrc.remove(this.sessionImgSrc);
-    }
-    else {
-      this.sessionImgSrc = this.sessionList[Object.keys(this.sessionList).length - 1].replace(/[-]+/g, '');
-      this.sessionImgSrc = "../../assets/images/"+this.sessionImgSrc;
-    }
-
-    if (this.sessionList[0] == "undefined" || this.sessionList[0] == "null") {
-      this.sessionName = " ";
-    }
-    else {
-      this.sessionName = this.sessionList[0].replace(/[^A-Za-z]+/g, '');
-      this.sessionName = this.sessionName.toUpperCase();
-    }
   }
 
   mapaKargatu() {
+
     this.leafletMap = new L.Map('map');
 
     /* Kargatzeko dana ondo */
@@ -101,16 +41,19 @@ export class MapaPage implements AfterViewInit {
       }, 10);
     });
 
-    /* Markerrak egin */
-    this.listOfMarkers.forEach((markerData) => {
-      let icon = L.icon({
-        iconUrl: markerData.icon,
-        iconSize: [50, 50]
+    this.lekuaService.getLekuak().subscribe((data) => {
+      this.listOfMarkers = data;
+
+      /* Markerrak egin */
+      this.listOfMarkers.forEach((markerData) => {
+        let icon = L.icon({
+          iconUrl: markerData.iconUrl,
+          iconSize: [50, 50]
+        });
+
+        let marker = L.marker([markerData.lat, markerData.lng], { icon: icon }).on('click', (izena) => { this.lekuaInfo(markerData.izena) }, this).addTo(this.leafletMap)
       });
-
-      let marker = L.marker([markerData.lat, markerData.lng], { icon: icon }).on('click', (izena) => { this.lekuaInfo(markerData.izena) }, this).addTo(this.leafletMap)
-
-    });
+    })
 
     /* Mapa jarri */
     this.leafletMap.setView([this.lat, this.lng], this.zoom);
@@ -140,7 +83,4 @@ export class MapaPage implements AfterViewInit {
 
     await alert.present();
   }
-  /**goBack(): void {
-    
-   }**/
 }

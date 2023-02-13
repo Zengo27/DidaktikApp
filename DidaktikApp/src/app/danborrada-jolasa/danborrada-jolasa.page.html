@@ -3,15 +3,15 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>DanborradaJolasa</ion-title>
+    <ion-title>Testu Galderak</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="content">
     <div class="fondoa"></div>
-    <ion-card>
-      <p id="galdera">Galdera:</p>
+    <ion-card *ngFor="let item of galderak | slice:0:1">
+      <p id="galdera">{{item}}</p>
           <form method="post">
             <ion-item>
               <ion-label for="fname">Zure erantzuna</ion-label>
@@ -19,7 +19,7 @@
             </ion-item>
           </form>
         <div class="submit">
-          <ion-button type="submit" (mousedown)="hurrengoa()">Hurrengoa</ion-button>
+          <ion-button type="submit" (click)="hurrengoa()">Hurrengoa</ion-button>
         </div>
     </ion-card>
   </div>

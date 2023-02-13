@@ -68,7 +68,7 @@ export class LetraSopaJokuaPage implements ViewWillEnter {
         this.divcolumn = document.createElement('div');
         this.divcolumn.setAttribute('id', 'div' + 'Y:' + j + 'X:' + i);
         this.divcolumn.setAttribute('class', 'divcolumn');
-        this.divcolumn.style="padding:2px;"
+        this.divcolumn.style="padding:1px;"
 
         this.divcolumn.textContent = this.soup[i * this.size + j];
         this.divrow.appendChild(this.divcolumn);
@@ -320,20 +320,20 @@ export class LetraSopaJokuaPage implements ViewWillEnter {
   }
   margotu(id: any) {
     this.divcolumn = document.getElementById(id);
-    this.divcolumn.setAttribute('style', 'background-color: orange;padding:2px;');
+    this.divcolumn.setAttribute('style', 'background-color: orange;padding:1px;');
   }
   ezabatu() {
     for (var i = 0; i < this.size; i++) {
       for (var j = 0; j < this.size; j++) {
         this.divcolumn = document.getElementById('div' + 'Y:' + i + 'X:' + j);
-        this.divcolumn.setAttribute('style', 'background-color: none;padding:2px;');
+        this.divcolumn.setAttribute('style', 'background-color: none;padding:1px;');
       }
     }
   }
   egokiakMargotu() {
     for (var i = 0; i < this.idEgokiak.length; i++) {
       this.divcolumn = document.getElementById(this.idEgokiak[i]);
-      this.divcolumn.setAttribute('style', 'background-color: orange;padding:2px;');
+      this.divcolumn.setAttribute('style', 'background-color: orange;padding:1px;');
     }
   }
   async alert(testua: string) {

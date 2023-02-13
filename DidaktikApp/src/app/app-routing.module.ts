@@ -12,14 +12,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
-  {
-    path: 'mapa/:sesioa',
-    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
-  },
-  {
     path: 'mapa',
     loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
   },

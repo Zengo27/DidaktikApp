@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'katedrala-jolasa',
     loadChildren: () => import('../katedrala-jolasa/katedrala-jolasa.module').then( m => m.KatedralaJolasaPageModule)
   },
+  {
+    path: 'mapa',
+    loadChildren: () => import('../mapa/mapa.module').then( m => m.MapaPageModule)
+  },
 ];
 
 @NgModule({
