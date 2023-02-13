@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'bukatu',
     loadChildren: () => import('../bukatu/bukatu.module').then( m => m.BukatuPageModule)
+  },
+  {
+    path: 'mapa',
+    loadChildren: () => import('../mapa/mapa.module').then( m => m.MapaPageModule)
   }
 ];
 

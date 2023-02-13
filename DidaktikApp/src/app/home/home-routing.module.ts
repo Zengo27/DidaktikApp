@@ -8,8 +8,8 @@ const routes: Routes = [
     component: HomePage,
   },
   {
-    path: 'login',
-    loadChildren: () => import('../login/login.module').then( m => m.LoginPageModule)
+    path: 'mapa',
+    loadChildren: () => import('../mapa/mapa.module').then( m => m.MapaPageModule)
   },
 ];
 

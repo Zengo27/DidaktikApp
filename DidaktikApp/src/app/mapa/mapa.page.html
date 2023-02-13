@@ -2,17 +2,12 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title slot="start">Mapa</ion-title>
-    <div class="usuarioa" slot="end">
-      <ion-text>{{sessionName}}</ion-text>
-      <img src="{{sessionImgSrc}}" id="irudia">
-    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content scroll="false">
   <div id="map" style="height: 100%"></div>
-  <ion-button slot="fixed" id="click-trigger" style="position: absolute; right: 0px">LEKUAK</ion-button
-  >
+  <ion-button slot="fixed" id="click-trigger" style="position: absolute; right: 0px">LEKUAK</ion-button>
   <ion-popover trigger="click-trigger" triggerAction="click">
     <ng-template>
       <ion-content class="ion-padding">1. Igeldo mendia</ion-content>

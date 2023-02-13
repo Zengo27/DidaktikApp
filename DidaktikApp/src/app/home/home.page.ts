@@ -11,6 +11,6 @@ export class HomePage {
   constructor(private router:Router) {}
 
   aurrera(){
-    this.router.navigateByUrl('login');
+    this.router.navigateByUrl('mapa');
   }
 }

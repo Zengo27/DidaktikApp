@@ -60,7 +60,7 @@ export class KatedralaJolasaPage implements OnInit {
           {
             text: 'Mapara bueltatu',
             handler: () => {
-              this.router.navigateByUrl('mapa/');
+              this.router.navigateByUrl('mapa');
             },
           },
           {

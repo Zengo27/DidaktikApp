@@ -13,7 +13,7 @@ export class BukatuPage implements OnInit {
   ngOnInit() {
   }
 
-  maparaJoan(){
+  /*maparaJoan(){
     this.router.navigateByUrl('mapa');
-  }
+  }*/
 }

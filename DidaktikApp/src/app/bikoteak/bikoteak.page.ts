@@ -74,7 +74,7 @@ export class BikoteakPage implements ViewWillEnter {
   cardsNotTheSame(card1: HTMLElement, card2: HTMLElement) {
     this.attempts++;
 
-    if (this.attempts < 5) {
+    if (this.attempts < 6) {
       setTimeout(() => {
         card1.classList.remove('flip');
         card2.classList.remove('flip');
@@ -91,18 +91,18 @@ export class BikoteakPage implements ViewWillEnter {
       backdropDismiss: false,
       buttons: [
         {
+          text: 'Mapara bueltatu',
+          handler: () => {
+              this.router.navigateByUrl("mapa");
+          }
+        },
+        {
           text: 'Saiatu berriro',
           handler: () => {
               window.location.reload();
-          },
-        },
-        {
-          text: 'Atzera joan',
-          handler: () => {
-              this.router.navigateByUrl("mapa/");
-          },
-        },
-      ],
+          }
+        }
+      ]
     });
     await alert.present();
   }
