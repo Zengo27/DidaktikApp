@@ -17,6 +17,4 @@ use App\Http\Controllers\LekuaController;
 |
 */
 
-Route::apiResource('galderak', GalderakController::class);
-Route::apiResource('informazioa', InformazioaController::class);
 Route::apiResource('lekua', LekuaController::class);
