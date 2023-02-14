@@ -1,9 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GalderakController; 
-use App\Http\Controllers\InformazioaController; 
 use App\Http\Controllers\LekuaController; 
 
 /*
