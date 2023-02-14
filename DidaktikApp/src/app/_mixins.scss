@@ -1,0 +1,7 @@
+@mixin flex_mixin ($direction, $bertikala, $horizontala, $wrap){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $bertikala;
+    justify-content: $horizontala;
+    flex-wrap: $wrap;
+  }

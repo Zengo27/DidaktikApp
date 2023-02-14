@@ -12,9 +12,7 @@ ion-title{
 .content{
     overflow: hidden;
     position: relative; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flex_mixin(column,center,center,no-wrap);
     height: 100%;
 }
 
@@ -64,9 +62,7 @@ ion-title{
     position: absolute;
     height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex_mixin(row,center,center,wrap);
     background-color: white;
     transform: rotateY(90deg);
 }
