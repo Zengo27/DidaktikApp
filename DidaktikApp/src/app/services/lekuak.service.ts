@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Lekua } from '../interfaces/lekua';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class LekuakService {
 
   constructor(  private http: HttpClient) { }
 
-  getLekuak(){
-    return this.http.get<any>(this.url);
+  getLekuak():Observable<Lekua[]>{
+    return this.http.get<Lekua[]>(this.url);
   }
 }
