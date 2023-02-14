@@ -3,12 +3,11 @@
 ion-title{
     padding: 0px 20px;
 }
+
 .content{
     overflow: hidden;
     position: relative; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flex_mixin(column,center,center,no-wrap);
     height: 100%;
 }
 
@@ -21,15 +20,12 @@ ion-title{
     width: 100%;
     position: absolute;
 }
+
 ion-card {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex_mixin(column,center,center,no-wrap);
     text-align: center;
     padding: 0px 5px 5px 5px;
-
 
     p{
         margin-bottom: 10px;

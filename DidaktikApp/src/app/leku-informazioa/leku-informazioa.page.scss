@@ -2,9 +2,7 @@
 .content{
     overflow: hidden;
     position: relative; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flex_mixin(column,null,center,no-wrap);
     height: 100%;
 }
 

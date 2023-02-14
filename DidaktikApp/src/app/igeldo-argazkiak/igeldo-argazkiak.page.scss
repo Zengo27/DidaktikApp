@@ -15,10 +15,7 @@ ion-img {
 
 .argazkiak {
     height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
+    @include flex_mixin(column,center,space-evenly,no-wrap);
     position: absolute;
 }
 

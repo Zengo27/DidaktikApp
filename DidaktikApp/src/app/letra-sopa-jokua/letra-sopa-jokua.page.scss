@@ -5,9 +5,7 @@ ion-title{
 .content{
     overflow: hidden;
     position: relative; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flex_mixin(column,center,center,no-wrap);
     height: 100%;
 }
 
@@ -20,31 +18,30 @@ ion-title{
     width: 100%;
     position: absolute;
 }
+
 .container {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    @include flex_mixin(column,center,center,no-wrap);
     gap: 2rem;
-    justify-content: center;
-    align-items: center;
     margin-left: 20%;
     margin-right: 20%;
 }
+
 .sopa {
     display: flex;
     background-color: white;
     height: min-content;
     width: min-content;
 }
-.divrow {
-    display: flex;
-    flex-direction: row;
 
+.divrow {
+    @include flex_mixin(row,null,null,no-wrap);
 }
+
 .divcolumn {
-    display: flex;
-    flex-direction: column;
+    @include flex_mixin(column,null,null,no-wrap);
 }
+
 .hitzak {
     background-color: white;
     height: min-content;
@@ -55,4 +52,3 @@ ion-title{
     grid-template-columns: repeat(2,1fr);
     padding: 5px;
 }
-// this.divcolumn.style.padding="2px";

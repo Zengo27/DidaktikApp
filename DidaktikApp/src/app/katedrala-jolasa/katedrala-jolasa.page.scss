@@ -3,10 +3,7 @@
 .content{
     overflow: hidden;
     position: relative; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex_mixin(column,center,center,no-wrap);
     height: 100%;
     padding: 0px 15%;
 }
@@ -32,14 +29,12 @@ ion-card{
     }
 }
 #erantzunak{
-    display: flex;
+    @include flex_mixin(column,null,center,no-wrap);
     text-align: left;
-    flex-direction: column;
 
     #erantzunak2{
         ion-item{
-            display: flex;
-            flex-direction: column;
+            @include flex_mixin(column,null,center,no-wrap);
             --ion-item-background: transparent;
             background: none;
         }

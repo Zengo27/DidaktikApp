@@ -8,10 +8,7 @@ body {
 }
 
 #container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex_mixin(column,center,center,no-wrap);
   height: 100%;
 }
 

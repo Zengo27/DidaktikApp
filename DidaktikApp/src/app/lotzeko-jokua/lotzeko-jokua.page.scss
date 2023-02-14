@@ -5,9 +5,7 @@ ion-title{
 .content{
     overflow: hidden;
     position: relative; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flex_mixin(column,null,center,no-wrap);
     height: 100%;
 }
 
@@ -26,10 +24,8 @@ ion-title{
     position: relative;
 }
 ion-card{
-    display: flex;
+    @include flex_mixin(row,center,space-evenly,no-wrap);
     padding: 10px;
-    align-items: center;
-    justify-content: space-evenly;
     gap: 5%;
 
     img{
