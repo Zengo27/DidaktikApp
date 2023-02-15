@@ -16,11 +16,9 @@ export class MapaPage implements AfterViewInit {
   lat: number = 43.3152;
   lng: number = -2.009;
   zoom: number = 13;
-  sessionImgSrc: any;
-  sessionName: any;
-  sessionList: any;
 
   listOfMarkers = [];
+  refresh = false;
 
   constructor(private alertCtrl: AlertController, private modalCtrl: ModalController, private route: ActivatedRoute, private lekuaService: LekuakService) { }
 
@@ -41,7 +39,7 @@ export class MapaPage implements AfterViewInit {
       }, 10);
     });
 
-    this.lekuaService.getLekuak().subscribe((data) => {
+    this.lekuaService.getLekuak(this.refresh).subscribe((data) => {
       this.listOfMarkers = data;
 
       /* Markerrak egin */
