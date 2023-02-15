@@ -74,8 +74,10 @@ class LekuaController extends Controller
      * @param  \App\Models\Lekua  $lekua
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Lekua $lekua)
+    public function destroy($id)
     {
-        //
+        $lekua = Lekua::find($id);
+        $lekua->delete();
+        return "Deleted";
     }
 }
